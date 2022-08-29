@@ -6,54 +6,19 @@
     "use strict";
 
     jQuery(document).ready(function ($) {
-        // navbar-click
-        function handle_menu_collapse(element) {
-            if (jQuery(element).hasClass("show")) {
-                jQuery(element).removeClass("show");
-                jQuery(element).children("ul").slideUp(500);
-            }
-        }
-
-        $(".menu-item-has-children a").on("click", function () {
-            let element = $(this).parent("li");
-            let all_children =  element.find('.menu-item-has-children')
-
-            all_children.map(function (key, menu_item) {
-                handle_menu_collapse(menu_item)
-            })
-
-            if (element.hasClass("show")) {
-                element.removeClass("show");
-                element.children("ul").slideUp(500);
-            } else {
-                element.siblings("li").removeClass('show');
-                element.addClass("show");
-                element.siblings("li").find("ul").slideUp(500);
-                element.children('ul').slideDown(500);
-            }
-        });
-
-        window.addEventListener('resize', function () {
-            if (screen.width > 991) {
-                $('.sub-menu').show();
-            }else{
-                $('.sub-menu').hide();
-            }
-        }, true);
-
 
         /*----------------------
            Search Popup
        -----------------------*/
         var bodyOvrelay = $('#body-overlay');
-        var searchPopup = $('#search-popup');
+        var searchPopup = $('#newsletter-popup');
 
         bodyOvrelay.on('click', function (e) {
             e.preventDefault();
             bodyOvrelay.removeClass('active');
             searchPopup.removeClass('active');
         });
-        $(document).on('click', '#search', function (e) {
+        $(document).on('click', '#newsletter', function (e) {
             e.preventDefault();
             searchPopup.addClass('active');
             bodyOvrelay.addClass('active');

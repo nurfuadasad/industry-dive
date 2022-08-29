@@ -130,9 +130,10 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
             $GLOBALS['content_width'] = apply_filters('INDUSTRY_DIVE_content_width', 740);
 
             //add image sizes
-            add_image_size('INDUSTRY_DIVE_classic', 750, 400, true);
-            add_image_size('INDUSTRY_DIVE_grid', 370, 270, true);
-            add_image_size('INDUSTRY_DIVE_medium', 550, 380, true);
+            add_image_size('industry_dive_classic', 750, 400, true);
+            add_image_size('industry_dive_full', 19200, 800, true);
+            add_image_size('industry_dive_grid', 370, 270, true);
+            add_image_size('industry_dive_medium', 550, 380, true);
 
             self::load_theme_dependency_files();
         }
@@ -265,7 +266,7 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
                     'media' => 'all',
                 ),
             );
-            $all_css_files = apply_filters('INDUSTRY_DIVE_theme_enqueue_style', $all_css_files);
+            $all_css_files = apply_filters('industry_dive_theme_enqueue_style', $all_css_files);
 
             if (is_array($all_css_files) && !empty($all_css_files)) {
                 foreach ($all_css_files as $css) {
@@ -278,7 +279,7 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
                 if (file_exists(INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php')) {
                     require_once INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php';
                     require_once INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-option-css-style.php';
-                    wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['INDUSTRY_DIVE_inline_css']));
+                    wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['industry_dive_inline_css']));
                     wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['theme_customize_css']));
                 }
 
@@ -295,6 +296,13 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
             $js_ext = INDUSTRY_DIVE_DEV ? '.js' : '.min.js';
             $all_js_files = array(
                 array(
+                    'handle' => 'INDUSTRY_DIVE-myloadmore-script',
+                    'src' => INDUSTRY_DIVE_JS . '/myloadmore' . $js_ext,
+                    'deps' => array('jquery'),
+                    'ver' => $theme_version,
+                    'in_footer' => true,
+                ),
+                array(
                     'handle' => 'INDUSTRY_DIVE-main-script',
                     'src' => INDUSTRY_DIVE_JS . '/main' . $js_ext,
                     'deps' => array('jquery'),
@@ -302,7 +310,7 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
                     'in_footer' => true,
                 ),
             );
-            $all_js_files = apply_filters('INDUSTRY_DIVE_theme_enqueue_script', $all_js_files);
+            $all_js_files = apply_filters('industry_dive_theme_enqueue_script', $all_js_files);
 
             if (is_array($all_js_files) && !empty($all_js_files)) {
                 foreach ($all_js_files as $js) {

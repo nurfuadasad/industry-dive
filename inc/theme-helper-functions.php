@@ -95,15 +95,17 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
          * render elementor content
          * @since 1.0.0
          * */
-        public function render_elementor_content( $content = null ) {
+        public function render_elementor_content($content = null)
+        {
             $return_val = '';
-            if ( defined( 'ELEMENTOR_VERSION' ) ) {
+            if (defined('ELEMENTOR_VERSION')) {
                 $el_plugin_instance = \Elementor\Plugin::instance();
-                $return_val = $el_plugin_instance->frontend->get_builder_content( $content );
+                $return_val = $el_plugin_instance->frontend->get_builder_content($content);
             }
 
             return $return_val;
         }
+
         /**
          * Sanitize px
          * @since 1.0.0
@@ -286,6 +288,95 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
 
         }
 
+
+        /**
+         * Estimated reading time in minutes
+         *
+         * @param $content
+         * @param $words_per_minute
+         * @param $with_gutenberg
+         *
+         * @return int estimated time in minutes
+         */
+
+        public function estimate_reading_time_in_minutes($content = '', $words_per_minute = 300, $with_gutenberg = false)
+        {
+            // In case if content is build with gutenberg parse blocks
+            if ($with_gutenberg) {
+                $blocks = parse_blocks($content);
+                $contentHtml = '';
+
+                foreach ($blocks as $block) {
+                    $contentHtml .= render_block($block);
+                }
+
+                $content = $contentHtml;
+            }
+
+            // Remove HTML tags from string
+            $content = wp_strip_all_tags($content);
+
+            // When content is empty return 0
+            if (!$content) {
+                return 0;
+            }
+
+            // Count words containing string
+            $words_count = str_word_count($content);
+
+            // Calculate time for read all words and round
+            $minutes = ceil($words_count / $words_per_minute);
+
+            return $minutes;
+        }
+
+
+        /**
+         * Check if given term has child terms
+         *
+         * @param Integer $term_id
+         * @param String $taxonomy
+         *
+         * @return Boolean
+         */
+        public function chromenews_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Popular Tags", $number = 5, $filterby = "popular")
+        {
+
+
+            $tags_filerby = (($filterby == 'latest')) ? 'date' : 'count';
+            $popular_taxonomies = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'number' => absint($number),
+                'orderby' => $tags_filerby,
+                'order' => 'DESC',
+                'hide_empty' => true,
+            ));
+
+            $html = '';
+
+            if (isset($popular_taxonomies) && !empty($popular_taxonomies)) :
+                $html .= '<div class="aft-popular-taxonomies-lists clearfix">';
+                if (!empty($title)) :
+                    $html .= '<strong>';
+                    $html .= esc_html($title);
+                    $html .= '</strong>';
+                endif;
+                $html .= '<ul>';
+                foreach ($popular_taxonomies as $tax_term) :
+                    $html .= '<li>';
+                    $html .= '<a href="' . esc_url(get_term_link($tax_term)) . '">';
+                    $html .= $tax_term->name;
+                    $html .= '</a>';
+                    $html .= '</li>';
+                endforeach;
+                $html .= '</ul>';
+                $html .= '</div>';
+            endif;
+
+            echo wp_kses_post($html);
+        }
+
+
         /**
          * Author avatar
          * @since 1.0.0
@@ -459,7 +550,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
                                 <?php
                                 while ($query->have_posts()) : $query->the_post();
                                     $img_id = get_post_thumbnail_id(get_the_ID()) ? get_post_thumbnail_id(get_the_ID()) : false;
-                                    $img_url_val = $img_id ? wp_get_attachment_image_src($img_id, 'INDUSTRY_DIVE_grid', false) : '';
+                                    $img_url_val = $img_id ? wp_get_attachment_image_src($img_id, 'industry_dive_full', false) : '';
                                     $img_url = is_array($img_url_val) && !empty($img_url_val) ? $img_url_val[0] : '';
                                     $img_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
                                     $comments_count = get_comments_number(get_the_ID());

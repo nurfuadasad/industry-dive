@@ -25,9 +25,7 @@ if (!class_exists('INDUSTRY_DIVE_Customize')) {
             add_action('excerpt_more', array($this, 'excerpt_more'));
             //preloader
             add_action('INDUSTRY_DIVE_after_body', array($this, 'preloader'));
-            //search popup
-            add_action('INDUSTRY_DIVE_after_body', array($this, 'search_popup'));
-            //breadcrumb
+             //breadcrumb
             add_action('INDUSTRY_DIVE_before_page_content', array($this, 'breadcrumb'));
             //back top
             add_action('INDUSTRY_DIVE_after_body', array($this, 'back_top'));
@@ -185,25 +183,6 @@ if (!class_exists('INDUSTRY_DIVE_Customize')) {
             return $fileds;
         }
 
-        /**
-         * @since 1.0.0
-         * Search Popup
-         */
-        public function search_popup()
-        {
-            ?>
-            <div class="body-overlay" id="body-overlay"></div>
-            <div class="search-popup" id="search-popup">
-                <form action="<?php echo esc_url(home_url('/')) ?>" class="search-form">
-                    <div class="form-group">
-                        <input type="text" name="s" class="form-control"
-                               placeholder="<?php echo esc_attr__('Search....', 'INDUSTRY_DIVE'); ?>">
-                    </div>
-                    <button class="close-btn border-none"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <?php
-        }
 
     }//end class
     if (class_exists('INDUSTRY_DIVE_Customize')) {

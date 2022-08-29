@@ -72,16 +72,13 @@ $post_single_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_pos
     if ($post_single_meta['next_post_nav_btn'] && $INDUSTRY_DIVE->is_industry_dive_core_active()) {
         echo wp_kses($INDUSTRY_DIVE->post_navigation(), $INDUSTRY_DIVE->kses_allowed_html('all'));
     }
-    if ($INDUSTRY_DIVE->is_industry_dive_core_active()) {
-        if ($post_single_meta['get_related_post']) {
-            $INDUSTRY_DIVE->get_related_post([
-                'post_type' => 'post',
-                'taxonomy' => 'category',
-                'exclude_id' => get_the_ID(),
-                'posts_per_page' => 2
-            ]);
-        }
-    }
+
+    $INDUSTRY_DIVE->get_related_post([
+        'post_type' => 'post',
+        'taxonomy' => 'category',
+        'exclude_id' => get_the_ID(),
+        'posts_per_page' => 2
+    ]);
     ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->
