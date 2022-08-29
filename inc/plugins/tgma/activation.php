@@ -11,7 +11,7 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme yotta for publication on ThemeForest
+ * @version    2.6.1 for parent theme INDUSTRY_DIVE for publication on ThemeForest
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -20,7 +20,7 @@
 
 require_once get_template_directory() . '/inc/plugins/tgma/theme-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'yotta_register_required_plugins' );
+add_action( 'tgmpa_register', 'INDUSTRY_DIVE_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -39,47 +39,14 @@ add_action( 'tgmpa_register', 'yotta_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function yotta_register_required_plugins() {
+function INDUSTRY_DIVE_register_required_plugins() {
 
 	$plugins = array(
-
-        array(
-            'name'         => 'Yotta Core',
-            'slug'         => 'yotta-core',
-            'source'       => 'https://themeim.com/plugins/yotta/yotta-core.zip',
-            'required'     => true,
-            'version'      => '1.0.0',
-
-        ),
-        array(
-            'name'         => 'Elementor Page Builder',
-            'slug'         => 'elementor',
-            'required'     => false,
-            'external_url' => 'https://wordpress.org/plugins/elementor/',
-        ),
-		array(
-			'name'         => 'Contact Form 7',
-			'slug'         => 'contact-form-7',
-			'required'     => false,
-			'external_url' => 'http://wordpress.org/plugins/contact-form-7',
-		),
         array(
 			'name'         => 'MC4WP: Mailchimp for WordPress',
 			'slug'         => 'mailchimp-for-wp',
 			'required'     => false,
 			'external_url' => 'https://wordpress.org/plugins/mailchimp-for-wp/',
-		),
-        array(
-			'name'         => 'Blockly',
-			'slug'         => 'blockly',
-			'required'     => false,
-			'external_url' => 'https://wordpress.org/plugins/blockly/',
-		),
-		array(
-			'name'         => 'One Click Demo Import',
-			'slug'         => 'one-click-demo-import',
-			'required'     => false,
-			'external_url' => 'https://wordpress.org/plugins/one-click-demo-import',
 		),
 
 	);
@@ -94,7 +61,7 @@ function yotta_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'yotta',
+		'id'           => 'INDUSTRY_DIVE',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

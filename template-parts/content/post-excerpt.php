@@ -1,17 +1,17 @@
 <?php
 /**
  * Theme Post excerpt Template
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
-$yotta = yotta();
-$post_meta = Yotta_Group_Fields_Value::post_meta('blog_post');
+$INDUSTRY_DIVE = INDUSTRY_DIVE();
+$post_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_post');
 $excerpt_length = !empty($post_meta['excerpt_length']) ? $post_meta['excerpt_length'] : 55;
-$readmore_text = !empty($post_meta['readmore_btn_text']) ? $post_meta['readmore_btn_text'] : esc_html__('Read More','yotta');
+$readmore_text = !empty($post_meta['readmore_btn_text']) ? $post_meta['readmore_btn_text'] : esc_html__('Read More','INDUSTRY_DIVE');
 
 
-Yotta_Excerpt($excerpt_length);
+INDUSTRY_DIVE_Excerpt($excerpt_length);
 ?>
 <div class="blog-bottom">
 	<?php

@@ -2,7 +2,7 @@
 
 /*
  * Theme Customize Options
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  * */
 
@@ -11,15 +11,15 @@ if (!defined('ABSPATH')) {
 }
 
 if (class_exists('CSF')) {
-    $prefix = 'yotta';
+    $prefix = 'INDUSTRY_DIVE';
 
     CSF::createCustomizeOptions($prefix . '_customize_options');
     /*-------------------------------------
         ** Theme Main panel
     -------------------------------------*/
     CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('Yotta Options', 'yotta'),
-        'id' => 'yotta_main_panel',
+        'title' => esc_html__('INDUSTRY_DIVE Options', 'INDUSTRY_DIVE'),
+        'id' => 'INDUSTRY_DIVE_main_panel',
         'priority' => 11,
     ));
 
@@ -28,37 +28,37 @@ if (class_exists('CSF')) {
         ** Theme Main Color
     -------------------------------------*/
     CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('01. Main Color', 'yotta'),
+        'title' => esc_html__('01. Main Color', 'INDUSTRY_DIVE'),
         'priority' => 10,
-        'parent' => 'yotta_main_panel',
+        'parent' => 'INDUSTRY_DIVE_main_panel',
         'fields' => array(
             array(
                 'id' => 'main_color',
                 'type' => 'color',
-                'title' => esc_html__('Theme Main Color One', 'yotta'),
-                'default' => '#1958D8',
-                'desc' => esc_html__('This is theme primary color one, means it will affect most of elements that have default color of our theme primary color', 'yotta')
+                'title' => esc_html__('Theme Main Color One', 'INDUSTRY_DIVE'),
+                'default' => '#009791',
+                'desc' => esc_html__('This is theme primary color one, means it will affect most of elements that have default color of our theme primary color', 'INDUSTRY_DIVE')
             ),
             array(
                 'id' => 'secondary_color',
                 'type' => 'color',
-                'title' => esc_html__('Theme Secondary Color', 'yotta'),
-                'default' => '#161616',
-                'desc' => esc_html__('This is theme secondary color, means it\'ll affect most of elements that have default color of our theme secondary color', 'yotta')
+                'title' => esc_html__('Theme Secondary Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a',
+                'desc' => esc_html__('This is theme secondary color, means it\'ll affect most of elements that have default color of our theme secondary color', 'INDUSTRY_DIVE')
             ),
             array(
                 'id' => 'heading_color',
                 'type' => 'color',
-                'title' => esc_html__('Theme Heading Color', 'yotta'),
-                'default' => '#161616',
-                'desc' => esc_html__('This is theme heading color, means it\'ll affect all of heading tag like, h1,h2,h3,h4,h5,h6', 'yotta')
+                'title' => esc_html__('Theme Heading Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a',
+                'desc' => esc_html__('This is theme heading color, means it\'ll affect all of heading tag like, h1,h2,h3,h4,h5,h6', 'INDUSTRY_DIVE')
             ),
             array(
                 'id' => 'paragraph_color',
                 'type' => 'color',
-                'title' => esc_html__('Theme Paragraph Color', 'yotta'),
-                'default' => '#2A2A2A',
-                'desc' => esc_html__('This is theme paragraph color, means it\'ll affect all of body/paragraph tag like, p,li,a etc', 'yotta')
+                'title' => esc_html__('Theme Paragraph Color', 'INDUSTRY_DIVE'),
+                'default' => '#5A5A5A',
+                'desc' => esc_html__('This is theme paragraph color, means it\'ll affect all of body/paragraph tag like, p,li,a etc', 'INDUSTRY_DIVE')
             ),
         )
     ));
@@ -67,220 +67,65 @@ if (class_exists('CSF')) {
     -------------------------------------*/
 
     CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('02. Header One Options', 'yotta'),
-        'parent' => 'yotta_main_panel',
+        'title' => esc_html__('02. Header One Options', 'INDUSTRY_DIVE'),
+        'parent' => 'INDUSTRY_DIVE_main_panel',
         'priority' => 11,
         'fields' => array(
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Nav Bar Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Nav Bar Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'header_01_nav_bar_bg_color',
                 'type' => 'color',
-                'title' => esc_html__('Nav Bar Background Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Nav Bar Background Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'id' => 'header_01_nav_bar_color',
                 'type' => 'color',
-                'title' => esc_html__('Nav Bar Text Color', 'yotta'),
+                'title' => esc_html__('Nav Bar Text Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
             array(
                 'id' => 'header_01_nav_bar_hover_color',
                 'type' => 'color',
-                'title' => esc_html__('Nav Bar Hover Text Color', 'yotta'),
-                'default' => '#1958D8'
+                'title' => esc_html__('Nav Bar Hover Text Color', 'INDUSTRY_DIVE'),
+                'default' => '#009791'
             ),
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Dropdown Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Dropdown Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'header_01_dropdown_bg_color',
                 'type' => 'color',
-                'title' => esc_html__('Dropdown Background Color', 'yotta'),
+                'title' => esc_html__('Dropdown Background Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
             array(
                 'id' => 'header_01_dropdown_color',
                 'type' => 'color',
-                'title' => esc_html__('Dropdown Text Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Dropdown Text Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'id' => 'header_01_dropdown_border_color',
                 'type' => 'color',
-                'title' => esc_html__('Dropdown Border Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Dropdown Border Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'id' => 'header_01_dropdown_hover_color',
                 'type' => 'color',
-                'title' => esc_html__('Dropdown Hover Text Color', 'yotta'),
+                'title' => esc_html__('Dropdown Hover Text Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
             array(
                 'id' => 'header_01_dropdown_hover_bg_color',
                 'type' => 'color',
-                'title' => esc_html__('Dropdown Hover Background Color', 'yotta'),
-                'default' => '#161616'
-            ),
-        )
-    ));
-    CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('03. Header Two Options', 'yotta'),
-        'parent' => 'yotta_main_panel',
-        'priority' => 11,
-        'fields' => array(
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Menu Option', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'header_02_nav_bar_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Menu Background Color', 'yotta'),
-                'default' => 'transparent'
-            ),
-            array(
-                'id' => 'header_02_nav_bar_color',
-                'type' => 'color',
-                'title' => esc_html__('Menu Color', 'yotta'),
-                'default' => '#161616'
-            ),
-            array(
-                'id' => 'header_02_nav_bar_hover_color',
-                'type' => 'color',
-                'title' => esc_html__('Menu Hover Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_02_top_bar_title_color',
-                'type' => 'color',
-                'title' => esc_html__('Menu Info Title Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_02_top_bar_text_color',
-                'type' => 'color',
-                'title' => esc_html__('Menu Info Paragraph Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Menu Bar Button', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'header_02_top_bar_btn_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Button Background Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_02_top_bar_btn_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Button Color', 'yotta'),
-                'default' => '#161616'
-            ),
-            array(
-                'id' => 'header_02_top_bar_btn_hover_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Button Hover Background Color', 'yotta'),
-                'default' => 'transparent'
-            ),
-            array(
-                'id' => 'header_02_top_bar_hover_btn_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Button Hover Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Sidebar Dropdown Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'header_02_dropdown_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Background Color', 'yotta'),
-                'default' => '#161616'
-            ),
-            array(
-                'id' => 'header_02_dropdown_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Text Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_02_dropdown_hover_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Hover Background Color', 'yotta'),
-                'default' => '#1958D8'
-            ),
-            array(
-                'id' => 'header_02_dropdown_hover_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Hover Text Color', 'yotta'),
-                'default' => '#fff'
-            ),
-
-        )
-    ));
-    CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('02. Header Three Options', 'yotta'),
-        'parent' => 'yotta_main_panel',
-        'priority' => 11,
-        'fields' => array(
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Nav Bar Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'header_03_nav_bar_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Background Color', 'yotta'),
-                'default' => 'transparent'
-            ),
-            array(
-                'id' => 'header_03_nav_bar_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Text Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_03_nav_bar_hover_color',
-                'type' => 'color',
-                'title' => esc_html__('Nav Bar Hover Text Color', 'yotta'),
-                'default' => '#1958D8'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Dropdown Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'header_03_dropdown_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Background Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_03_dropdown_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Text Color', 'yotta'),
-                'default' => '#161616'
-            ),
-            array(
-                'id' => 'header_03_dropdown_hover_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Hover Text Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'header_03_dropdown_hover_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Dropdown Hover Background Color', 'yotta'),
-                'default' => '#1958D8'
+                'title' => esc_html__('Dropdown Hover Background Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
         )
     ));
@@ -288,31 +133,31 @@ if (class_exists('CSF')) {
           ** Theme Sidebar Options
       -------------------------------------*/
     CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('05. Sidebar', 'yotta'),
+        'title' => esc_html__('05. Sidebar', 'INDUSTRY_DIVE'),
         'priority' => 13,
-        'parent' => 'yotta_main_panel',
+        'parent' => 'INDUSTRY_DIVE_main_panel',
         'fields' => array(
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Sidebar Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Sidebar Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'sidebar_widget_title_color',
                 'type' => 'color',
-                'title' => esc_html__('Sidebar Widget Title Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Sidebar Widget Title Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'id' => 'sidebar_widget_title_bottom_border_color',
                 'type' => 'color',
-                'title' => esc_html__('Sidebar Widget Border Color', 'yotta'),
-                'default' => '#1958D8'
+                'title' => esc_html__('Sidebar Widget Border Color', 'INDUSTRY_DIVE'),
+                'default' => '#009791'
             ),
             array(
                 'id' => 'sidebar_widget_text_color',
                 'type' => 'color',
-                'title' => esc_html__('Sidebar Widget Text Color', 'yotta'),
-                'default' => '#2A2A2A'
+                'title' => esc_html__('Sidebar Widget Text Color', 'INDUSTRY_DIVE'),
+                'default' => '#5A5A5A'
             ),
         )
     ));
@@ -320,256 +165,89 @@ if (class_exists('CSF')) {
         ** Theme Footer One Options
     -------------------------------------*/
     CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('06. Footer One', 'yotta'),
+        'title' => esc_html__('06. Footer One', 'INDUSTRY_DIVE'),
         'priority' => 14,
-        'parent' => 'yotta_main_panel',
+        'parent' => 'INDUSTRY_DIVE_main_panel',
         'fields' => array(
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Footer Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'footer_area_bg_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Background Color', 'yotta'),
-                'default' => '#161616',
+                'title' => esc_html__('Footer Background Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a',
             ),
             array(
                 'id' => 'footer_area_bottom_border_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Bottom Border Color', 'yotta'),
+                'title' => esc_html__('Footer Bottom Border Color', 'INDUSTRY_DIVE'),
                 'default' => 'rgba(114, 108, 148, 0.2)',
             ),
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Widget Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Footer Widget Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'footer_widget_title_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Widget Title Color', 'yotta'),
+                'title' => esc_html__('Footer Widget Title Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
             array(
                 'id' => 'footer_widget_text_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Widget Text Color', 'yotta'),
+                'title' => esc_html__('Footer Widget Text Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
             array(
                 'id' => 'footer_widget_text_hover_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Widget Text Hover Color', 'yotta'),
-                'default' => '#1958D8'
+                'title' => esc_html__('Footer Widget Text Hover Color', 'INDUSTRY_DIVE'),
+                'default' => '#009791'
             ),
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Tag Cloud Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Tag Cloud Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'footer_widget_tag_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Tag Text Color', 'yotta'),
+                'title' => esc_html__('Footer Tag Text Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
             array(
                 'id' => 'footer_widget_tag_bg_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Tag Background Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Footer Tag Background Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'id' => 'footer_widget_tag_border_color',
                 'type' => 'color',
-                'title' => esc_html__('Footer Tag Border Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Footer Tag Border Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Copyright Area Options', 'yotta') . '</h3>'
+                'content' => '<h3>' . esc_html__('Copyright Area Options', 'INDUSTRY_DIVE') . '</h3>'
             ),
             array(
                 'id' => 'copyright_area_bg_color',
                 'type' => 'color',
-                'title' => esc_html__('Copyright Area Background Color', 'yotta'),
-                'default' => '#161616'
+                'title' => esc_html__('Copyright Area Background Color', 'INDUSTRY_DIVE'),
+                'default' => '#5a5a5a'
             ),
             array(
                 'id' => 'copyright_area_text_color',
                 'type' => 'color',
-                'title' => esc_html__('Copyright Area Text Color', 'yotta'),
+                'title' => esc_html__('Copyright Area Text Color', 'INDUSTRY_DIVE'),
                 'default' => '#fff'
             ),
         )
     ));
 
-    /*-------------------------------------
-     ** Theme Footer Two Options
-    -------------------------------------*/
-    CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('06. Footer Two', 'yotta'),
-        'priority' => 14,
-        'parent' => 'yotta_main_panel',
-        'fields' => array(
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'footer_area_two_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Background Color', 'yotta'),
-                'default' => '#161616',
-            ),
-            array(
-                'id' => 'footer_area_two_bottom_border_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Bottom Border Color', 'yotta'),
-                'default' => 'rgba(255, 255, 255, 0.2)',
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Widget Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'footer_two_widget_text_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Widget Text Color', 'yotta'),
-                'default' => 'rgba(255,255,255,0.8)'
-            ),
-            array(
-                'id' => 'footer_two_widget_text_hover_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Widget Text Hover Color', 'yotta'),
-                'default' => '#1958D8'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Copyright Area Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'copyright_two_area_text_color',
-                'type' => 'color',
-                'title' => esc_html__('Copyright Area Text Color', 'yotta'),
-                'default' => '#8A8A8A'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Social Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'copyright_two_area_footer_social_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Social Color', 'yotta'),
-                'default' => '#8A8A8A'
-            ),
-            array(
-                'id' => 'copyright_two_area_footer_social_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Social Background Color', 'yotta'),
-                'default' => 'transparent'
-            ),
-            array(
-                'id' => 'copyright_two_area_footer_hover_social_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Social Hover Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'copyright_two_area_footer_social_hover_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Social Background Hover Color', 'yotta'),
-                'default' => '#1958D8'
-            ),
-        )
-    ));
-
-    /*-------------------------------------
-    ** Theme Footer Three Options
-    -------------------------------------*/
-    CSF::createSection($prefix . '_customize_options', array(
-        'title' => esc_html__('06. Footer Three', 'yotta'),
-        'priority' => 14,
-        'parent' => 'yotta_main_panel',
-        'fields' => array(
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'footer_area_three_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Background Color', 'yotta'),
-                'default' => '#161616'
-            ),
-            array(
-                'id' => 'footer_area_three_bottom_border_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Bottom Border Color', 'yotta'),
-                'default' => 'rgba(255, 255, 255, 0.2)',
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Footer Widget Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'footer_three_widget_title_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Widget Title Color', 'yotta'),
-                'default' => '#1958D8'
-            ),
-            array(
-                'id' => 'footer_three_widget_text_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Widget Text Color', 'yotta'),
-                'default' => '#161616'
-            ),
-            array(
-                'id' => 'footer_three_widget_text_hover_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Widget Text Hover Color', 'yotta'),
-                'default' => '#1958D8'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Tag Cloud Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'footer_widget_three_tag_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Tag Text Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'id' => 'footer_widget_three_tag_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Tag Background Color', 'yotta'),
-                'default' => 'transparent'
-            ),
-            array(
-                'id' => 'footer_widget_three_tag_border_color',
-                'type' => 'color',
-                'title' => esc_html__('Footer Tag Border Color', 'yotta'),
-                'default' => '#fff'
-            ),
-            array(
-                'type' => 'subheading',
-                'content' => '<h3>' . esc_html__('Copyright Area Options', 'yotta') . '</h3>'
-            ),
-            array(
-                'id' => 'copyright_three_area_bg_color',
-                'type' => 'color',
-                'title' => esc_html__('Copyright Area Background Color', 'yotta'),
-                'default' => 'transparent'
-            ),
-            array(
-                'id' => 'copyright_three_area_text_color',
-                'type' => 'color',
-                'title' => esc_html__('Copyright Area Text Color', 'yotta'),
-                'default' => '#8A8A8A'
-            ),
-        )
-    ));
 
 
 }//endif

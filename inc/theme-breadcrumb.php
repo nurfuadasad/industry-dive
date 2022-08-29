@@ -1,13 +1,13 @@
 <?php
 /**
  * Theme Breadcrumb
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
-class Yotta_Breadcrumb {
+class INDUSTRY_DIVE_Breadcrumb {
     /**
-     * Array of bread Yotta_Breadcrumb
+     * Array of bread INDUSTRY_DIVE_Breadcrumb
      *
      * @var array
      */
@@ -46,8 +46,8 @@ class Yotta_Breadcrumb {
         } else {
             $this->defaults['blog_url'] = esc_url( home_url() );
         }
-        $this->defaults['home'] = esc_html__('Home','yotta');
-        $this->defaults['blog'] = esc_html__('Blog','yotta');
+        $this->defaults['home'] = esc_html__('Home','INDUSTRY_DIVE');
+        $this->defaults['blog'] = esc_html__('Blog','INDUSTRY_DIVE');
 
         // Merge defaults with user passed options.
         $this->options = array_replace_recursive( $this->defaults, $options );
@@ -82,7 +82,7 @@ class Yotta_Breadcrumb {
 
                 // Otherwise make a span
             } else {
-                $html .= sprintf( '<span>%s</span>', wp_kses($crumb['title'],yotta()->kses_allowed_html('all')) );
+                $html .= sprintf( '<span>%s</span>', wp_kses($crumb['title'],INDUSTRY_DIVE()->kses_allowed_html('all')) );
             }
 
             // Add seperators
@@ -101,7 +101,7 @@ class Yotta_Breadcrumb {
         // close the element
         $html .= sprintf( '</%s>', $el );
 
-        echo wp_kses($html,yotta()->kses_allowed_html('all'));
+        echo wp_kses($html,INDUSTRY_DIVE()->kses_allowed_html('all'));
     }
 
     /**
@@ -111,7 +111,7 @@ class Yotta_Breadcrumb {
      */
     public function getBreadcrumbs() {
         $breadcrumbs = $this->breadcrumbs;
-        $breadcrumbs = apply_filters( 'yotta_get_breadcrumbs', $breadcrumbs );
+        $breadcrumbs = apply_filters( 'INDUSTRY_DIVE_get_breadcrumbs', $breadcrumbs );
 
         return $breadcrumbs;
     }
@@ -132,7 +132,7 @@ class Yotta_Breadcrumb {
     /**
      * Generate the breadcrumbs
      *
-     * @package yotta
+     * @package INDUSTRY_DIVE
      */
     public function doBreadcrumbs() {
         // Generate front page breadcrumb.
@@ -237,21 +237,21 @@ class Yotta_Breadcrumb {
 /**
  * Template Functions.
  */
-if ( ! function_exists( 'yotta_breadcrumb' ) ) {
+if ( ! function_exists( 'INDUSTRY_DIVE_breadcrumb' ) ) {
     /**
      * Generate and display the breadcrumbs.
      *
      * @param array $options
      *
-     * @package yotta
+     * @package INDUSTRY_DIVE
      */
-    function yotta_breadcrumb( $options = [] ) {
-        $Crumbs = new Yotta_Breadcrumb( $options );
+    function INDUSTRY_DIVE_breadcrumb( $options = [] ) {
+        $Crumbs = new INDUSTRY_DIVE_Breadcrumb( $options );
         $Crumbs->theBreadcrumbs();
     }
 }
 
-if ( ! function_exists( 'yotta_get_breadcrumbs' ) ) {
+if ( ! function_exists( 'INDUSTRY_DIVE_get_breadcrumbs' ) ) {
     /**
      * Generate and return the breadcrumbs.
      *
@@ -259,8 +259,8 @@ if ( ! function_exists( 'yotta_get_breadcrumbs' ) ) {
      *
      * @return array
      */
-    function yotta_get_breadcrumbs( $options = [] ) {
-        $Crumbs = new Yotta_Breadcrumb( $options );
+    function INDUSTRY_DIVE_get_breadcrumbs( $options = [] ) {
+        $Crumbs = new INDUSTRY_DIVE_Breadcrumb( $options );
 
         return $Crumbs->getBreadcrumbs();
     }
@@ -269,7 +269,7 @@ if ( ! function_exists( 'yotta_get_breadcrumbs' ) ) {
 /**
  * Utility functions
  */
-if ( ! function_exists( 'yotta_breadcrumb_array_insert' ) ) {
+if ( ! function_exists( 'INDUSTRY_DIVE_breadcrumb_array_insert' ) ) {
     /**
      * Insert element to a specific index of the array.
      *
@@ -279,7 +279,7 @@ if ( ! function_exists( 'yotta_breadcrumb_array_insert' ) ) {
      *
      * @return array
      */
-    function yotta_breadcrumb_array_insert( array $array, $element, int $position ) {
+    function INDUSTRY_DIVE_breadcrumb_array_insert( array $array, $element, int $position ) {
         // if the array is empty just add the element to it
         if ( empty( $array ) ) {
             $array[] = $element;

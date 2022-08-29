@@ -9,53 +9,45 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 
 get_header();
 
-$page_layout_meta = Yotta_Group_Fields_Value::page_layout('yotta');
-$page_container_meta = Yotta_Group_Fields_Value::page_container('yotta','container_options');
+$page_layout_meta = INDUSTRY_DIVE_Group_Fields_Value::page_layout('INDUSTRY_DIVE');
+$page_container_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'container_options');
 $full_width_class = $page_layout_meta['content_column_class'] === 'col-lg-12' ? ' full-width-content ' : '';
 ?>
 <?php
 
 if ('blank' == $page_layout_meta['layout']):
 
-	while ( have_posts() ) :
-		the_post();
+    while (have_posts()) :
+        the_post();
 
-		get_template_part( 'template-parts/content', 'page' );
+        get_template_part('template-parts/content', 'page');
 
-	endwhile; // End of the loop.
+    endwhile; // End of the loop.
 
 else:
-	?>
-    <div id="primary" class="content-area yotta-page-content-area padding-120 page-content-wrap-<?php the_ID(); ?> <?php echo esc_attr($full_width_class);?>">
+    ?>
+    <div id="primary"
+         class="content-area INDUSTRY_DIVE-page-content-area padding-120 page-content-wrap-<?php the_ID(); ?> <?php echo esc_attr($full_width_class); ?>">
         <main id="main" class="site-main">
-            <div class="<?php echo esc_attr($page_container_meta['page_container_class'])?>">
-                <div class="row">
-                    <div class="<?php echo esc_attr($page_layout_meta['content_column_class']);?>">
-                        <div class="page-content-inner-<?php the_ID(); ?>">
-							<?php
-							while ( have_posts() ) :
-								the_post();
-								get_template_part( 'template-parts/content', 'page' );
+            <div class="<?php echo esc_attr($page_layout_meta['content_column_class']); ?>">
+                <div class="page-content-inner-<?php the_ID(); ?>">
+                    <?php
+                    while (have_posts()) :
+                        the_post();
+                        get_template_part('template-parts/content', 'page');
 
-								// If comments are open or we have at least one comment, load up the comment template.
-								if ( comments_open() || get_comments_number() ) :
-									comments_template();
-								endif;
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if (comments_open() || get_comments_number()) :
+                            comments_template();
+                        endif;
 
-							endwhile; // End of the loop.
-							?>
-                        </div>
-                    </div>
-					<?php if ($page_layout_meta['sidebar_enable']): ?>
-                        <div class="<?php echo esc_attr($page_layout_meta['sidebar_column_class']);?>">
-							<?php get_sidebar();?>
-                        </div>
-					<?php endif; ?>
+                    endwhile; // End of the loop.
+                    ?>
                 </div>
             </div>
         </main><!-- #main -->

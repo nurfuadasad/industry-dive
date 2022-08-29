@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Init Functions
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
@@ -9,9 +9,9 @@ if (!defined("ABSPATH")) {
     exit(); //exit if access directly
 }
 
-if (!class_exists('Yotta_Init')) {
+if (!class_exists('INDUSTRY_DIVE_Init')) {
 
-    class Yotta_Init
+    class INDUSTRY_DIVE_Init
     {
        /**
         * $instance
@@ -60,7 +60,7 @@ if (!class_exists('Yotta_Init')) {
              * Make theme available for translation.
              * Translations can be filed in the /languages/ directory.
              */
-            load_theme_textdomain('yotta', get_template_directory() . '/languages');
+            load_theme_textdomain('INDUSTRY_DIVE', get_template_directory() . '/languages');
 
             // Add default posts and comments RSS feed links to head.
             add_theme_support('automatic-feed-links');
@@ -79,8 +79,7 @@ if (!class_exists('Yotta_Init')) {
 
             // This theme uses wp_nav_menu() in one location.
             register_nav_menus(array(
-                'main-menu' => esc_html__('Primary Menu', 'yotta'),
-                'main-menu-02' => esc_html__('Primary Menu Two', 'yotta'),
+                'main-menu' => esc_html__('Primary Menu', 'INDUSTRY_DIVE'),
             ));
 
             /*
@@ -128,12 +127,12 @@ if (!class_exists('Yotta_Init')) {
             add_theme_support('post-formats', array('image', 'video', 'gallery', 'link', 'quote'));
 
             // This variable is intended to be overruled from themes.
-            $GLOBALS['content_width'] = apply_filters('yotta_content_width', 740);
+            $GLOBALS['content_width'] = apply_filters('INDUSTRY_DIVE_content_width', 740);
 
             //add image sizes
-            add_image_size('yotta_classic', 750, 400, true);
-            add_image_size('yotta_grid', 370, 270, true);
-            add_image_size('yotta_medium', 550, 380, true);
+            add_image_size('INDUSTRY_DIVE_classic', 750, 400, true);
+            add_image_size('INDUSTRY_DIVE_grid', 370, 270, true);
+            add_image_size('INDUSTRY_DIVE_medium', 550, 380, true);
 
             self::load_theme_dependency_files();
         }
@@ -146,49 +145,9 @@ if (!class_exists('Yotta_Init')) {
         public function theme_widgets_init()
         {
             register_sidebar(array(
-                'name' => esc_html__('Sidebar', 'yotta'),
-                'id' => 'sidebar-1',
-                'description' => esc_html__('Add widgets here.', 'yotta'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget' => '</div>',
-                'before_title' => '<h4 class="widget-headline style-01">',
-                'after_title' => '</h4>',
-            ));
-            if (yotta()->is_yotta_core_active()) {
-                register_sidebar(array(
-                    'name' => esc_html__('Course Sidebar', 'yotta'),
-                    'id' => 'tutor-sidebar',
-                    'description' => esc_html__('Add widgets here.', 'yotta'),
-                    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                    'after_widget' => '</div>',
-                    'before_title' => '<h4 class="widget-headline style-01">',
-                    'after_title' => '</h4>',
-                ));
-            }
-            if (yotta()->is_yotta_core_active()) {
-                register_sidebar(array(
-                    'name' => esc_html__('Product Sidebar', 'yotta'),
-                    'id' => 'product-sidebar',
-                    'description' => esc_html__('Add widgets here.', 'yotta'),
-                    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                    'after_widget' => '</div>',
-                    'before_title' => '<h4 class="widget-headline style-01">',
-                    'after_title' => '</h4>',
-                ));
-            }
-            register_sidebar(array(
-                'name' => esc_html__('Footer Widget Area', 'yotta'),
+                'name' => esc_html__('Footer Widget Area', 'INDUSTRY_DIVE'),
                 'id' => 'footer-widget',
-                'description' => esc_html__('Add widgets here.', 'yotta'),
-                'before_widget' => '<div class="col-lg-3 col-md-6"><div id="%1$s" class="widget footer-widget %2$s">',
-                'after_widget' => '</div></div>',
-                'before_title' => '<h4 class="widget-headline">',
-                'after_title' => '</h4>',
-            ));
-            register_sidebar(array(
-                'name' => esc_html__('Footer Widget Area Two', 'yotta'),
-                'id' => 'footer-widget-two',
-                'description' => esc_html__('Add widgets here.', 'yotta'),
+                'description' => esc_html__('Add widgets here.', 'INDUSTRY_DIVE'),
                 'before_widget' => '<div class="col-lg-3 col-md-6"><div id="%1$s" class="widget footer-widget %2$s">',
                 'after_widget' => '</div></div>',
                 'before_title' => '<h4 class="widget-headline">',
@@ -217,7 +176,7 @@ if (!class_exists('Yotta_Init')) {
             //body font enqueue
             $body_font = cs_get_option('_body_font') ? cs_get_option('_body_font') : false;
             $body_font_variant = cs_get_option('body_font_variant') ? cs_get_option('body_font_variant') : false;
-            $body_font['family'] = (isset($body_font['font-family']) && !empty($body_font['font-family'])) ? $body_font['font-family'] : 'Roboto';
+            $body_font['family'] = (isset($body_font['font-family']) && !empty($body_font['font-family'])) ? $body_font['font-family'] : 'Invention-Regular';
             $body_font['font'] = (isset($body_font['type']) && !empty($body_font['type'])) ? $body_font['type'] : 'google';
             $body_font_variant = !empty($body_font_variant) ? $body_font_variant : array(400, 700, 600, 500);
             $google_fonts = array();
@@ -242,7 +201,7 @@ if (!class_exists('Yotta_Init')) {
             }
             $heading_font = cs_get_option('heading_font') ? cs_get_option('heading_font') : false;
             $heading_font_variant = cs_get_option('heading_font_variant') ? cs_get_option('heading_font_variant') : false;
-            $heading_font['family'] = (isset($heading_font['font-family']) && !empty($heading_font['font-family'])) ? $heading_font['font-family'] : 'Kanit';
+            $heading_font['family'] = (isset($heading_font['font-family']) && !empty($heading_font['font-family'])) ? $heading_font['font-family'] : 'Khand';
             $heading_font['font'] = (isset($heading_font['type']) && !empty($heading_font['type'])) ? $heading_font['type'] : 'google';
             $heading_font_variant = !empty($heading_font_variant) ? $heading_font_variant : array(400, 500, 600, 700, 800);
             if (!empty($heading_font_variant) && !$heading_font_enable) {
@@ -276,79 +235,51 @@ if (!class_exists('Yotta_Init')) {
          */
         public function load_theme_css()
         {
-            $theme_version = YOTTA_DEV ? time() : yotta()->get_theme_info('version');
+            $theme_version = INDUSTRY_DIVE_DEV ? time() : INDUSTRY_DIVE()->get_theme_info('version');
             $css_ext = '.css';
             //load google fonts
             $enqueue_google_fonts = self::load_google_fonts();
             if (!empty($enqueue_google_fonts)) {
-                wp_enqueue_style('yotta-google-fonts', esc_url(add_query_arg('family', urlencode(implode('|', $enqueue_google_fonts)), '//fonts.googleapis.com/css')), array(), null);
+                wp_enqueue_style('INDUSTRY_DIVE-google-fonts', esc_url(add_query_arg('family', urlencode(implode('|', $enqueue_google_fonts)), '//fonts.googleapis.com/css')), array(), null);
             }
             $all_css_files = array(
                 array(
                     'handle' => 'animate',
-                    'src' => YOTTA_CSS . '/animate.css',
+                    'src' => INDUSTRY_DIVE_CSS . '/animate.css',
                     'deps' => array(),
                     'ver' => $theme_version,
                     'media' => 'all',
                 ),
                 array(
-                    'handle' => 'flaticon',
-                    'src' => YOTTA_CSS . '/flaticon.css',
+                    'handle' => 'INDUSTRY_DIVE-main-style',
+                    'src' => INDUSTRY_DIVE_CSS . '/main-style' . $css_ext,
                     'deps' => array(),
                     'ver' => $theme_version,
                     'media' => 'all',
                 ),
                 array(
-                    'handle' => 'bootstrap',
-                    'src' => YOTTA_CSS . '/bootstrap.min.css',
-                    'deps' => array(),
-                    'ver' => $theme_version,
-                    'media' => 'all',
-                ),
-                array(
-                    'handle' => 'font-awesome',
-                    'src' => YOTTA_CSS . '/font-awesome.min.css',
-                    'deps' => array(),
-                    'ver' => '5.12.0',
-                    'media' => 'all',
-                ),
-                array(
-                    'handle' => 'magnific-popup',
-                    'src' => YOTTA_CSS . '/magnific-popup.css',
-                    'deps' => array(),
-                    'ver' => $theme_version,
-                    'media' => 'all',
-                ),
-                array(
-                    'handle' => 'yotta-main-style',
-                    'src' => YOTTA_CSS . '/main-style' . $css_ext,
-                    'deps' => array(),
-                    'ver' => $theme_version,
-                    'media' => 'all',
-                ),
-                array(
-                    'handle' => 'yotta-responsive',
-                    'src' => YOTTA_CSS . '/responsive' . $css_ext,
+                    'handle' => 'INDUSTRY_DIVE-responsive',
+                    'src' => INDUSTRY_DIVE_CSS . '/responsive' . $css_ext,
                     'deps' => array(),
                     'ver' => $theme_version,
                     'media' => 'all',
                 ),
             );
-            $all_css_files = apply_filters('yotta_theme_enqueue_style', $all_css_files);
+            $all_css_files = apply_filters('INDUSTRY_DIVE_theme_enqueue_style', $all_css_files);
 
             if (is_array($all_css_files) && !empty($all_css_files)) {
                 foreach ($all_css_files as $css) {
                     call_user_func_array('wp_enqueue_style', $css);
                 }
             }
-            wp_enqueue_style('yotta-style', get_stylesheet_uri());
+            wp_enqueue_style('INDUSTRY_DIVE-style', get_stylesheet_uri());
 
-            if (yotta()->is_yotta_core_active()) {
-                if (file_exists(YOTTA_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php')) {
-                    require_once YOTTA_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php';
-                    require_once YOTTA_DYNAMIC_STYLESHEETS . '/theme-option-css-style.php';
-                    wp_add_inline_style('yotta-style', yotta()->minify_css_lines($GLOBALS['yotta_inline_css']));
-                    wp_add_inline_style('yotta-style', yotta()->minify_css_lines($GLOBALS['theme_customize_css']));
+            if (INDUSTRY_DIVE()->is_industry_dive_core_active()) {
+                if (file_exists(INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php')) {
+                    require_once INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php';
+                    require_once INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-option-css-style.php';
+                    wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['INDUSTRY_DIVE_inline_css']));
+                    wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['theme_customize_css']));
                 }
 
             }
@@ -360,46 +291,18 @@ if (!class_exists('Yotta_Init')) {
          */
         public function load_theme_js()
         {
-            $theme_version = yotta()->get_theme_info('version');
-            $js_ext = YOTTA_DEV ? '.js' : '.min.js';
+            $theme_version = INDUSTRY_DIVE()->get_theme_info('version');
+            $js_ext = INDUSTRY_DIVE_DEV ? '.js' : '.min.js';
             $all_js_files = array(
                 array(
-                    'handle' => 'bootstrap',
-                    'src' => YOTTA_JS . '/bootstrap.min.js',
-                    'deps' => array('jquery'),
-                    'ver' => $theme_version,
-                    'in_footer' => true,
-                ),
-                array(
-                    'handle' => 'fontawesome',
-                    'src' => YOTTA_JS . '/font-awesome.min.js',
-                    'deps' => array('jquery'),
-                    'ver' => $theme_version,
-                    'in_footer' => true,
-                ),
-                array(
-                    'handle' => 'preloader',
-                    'src' => YOTTA_JS . '/preloader.js',
-                    'deps' => array('jquery'),
-                    'ver' => $theme_version,
-                    'in_footer' => true,
-                ),
-                array(
-                    'handle' => 'magnific-popup',
-                    'src' => YOTTA_JS . '/jquery.magnific-popup.js',
-                    'deps' => array('jquery'),
-                    'ver' => $theme_version,
-                    'in_footer' => true,
-                ),
-                array(
-                    'handle' => 'yotta-main-script',
-                    'src' => YOTTA_JS . '/main' . $js_ext,
+                    'handle' => 'INDUSTRY_DIVE-main-script',
+                    'src' => INDUSTRY_DIVE_JS . '/main' . $js_ext,
                     'deps' => array('jquery'),
                     'ver' => $theme_version,
                     'in_footer' => true,
                 ),
             );
-            $all_js_files = apply_filters('yotta_theme_enqueue_script', $all_js_files);
+            $all_js_files = apply_filters('INDUSTRY_DIVE_theme_enqueue_script', $all_js_files);
 
             if (is_array($all_js_files) && !empty($all_js_files)) {
                 foreach ($all_js_files as $js) {
@@ -421,59 +324,59 @@ if (!class_exists('Yotta_Init')) {
             $includes_files = array(
                 array(
                     'file-name' => 'activation',
-                    'file-path' => YOTTA_TGMA
+                    'file-path' => INDUSTRY_DIVE_TGMA
                 ),
                 array(
                     'file-name' => 'theme-breadcrumb',
-                    'file-path' => YOTTA_INC
+                    'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
                     'file-name' => 'theme-excerpt',
-                    'file-path' => YOTTA_INC
+                    'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
                     'file-name' => 'theme-hook-customize',
-                    'file-path' => YOTTA_INC
+                    'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
                     'file-name' => 'theme-megamenu-walker',
-                    'file-path' => YOTTA_INC
+                    'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
                     'file-name' => 'theme-comments-modifications',
-                    'file-path' => YOTTA_INC
+                    'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
                     'file-name' => 'customizer',
-                    'file-path' => YOTTA_INC
+                    'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
                     'file-name' => 'theme-group-fields-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
                 array(
                     'file-name' => 'theme-group-fields-value-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
                 array(
                     'file-name' => 'theme-metabox-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
                 array(
                     'file-name' => 'theme-userprofile-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
                 array(
                     'file-name' => 'theme-shortcode-option-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
                 array(
                     'file-name' => 'theme-customizer-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
                 array(
                     'file-name' => 'theme-option-cs',
-                    'file-path' => YOTTA_THEME_SETTINGS
+                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
             );
 
@@ -498,7 +401,7 @@ if (!class_exists('Yotta_Init')) {
         }
 
     }//end class
-    if (class_exists('Yotta_Init')) {
-        Yotta_Init::getInstance();
+    if (class_exists('INDUSTRY_DIVE_Init')) {
+        INDUSTRY_DIVE_Init::getInstance();
     }
 }

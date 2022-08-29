@@ -16,7 +16,14 @@
 .mobile-logo {
   display: none;
 }
-
+.custom-container{
+  width: 100%;
+  max-width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 @media only screen and (max-width: 991px) {
   .mobile-logo {
     display: block;
@@ -37,142 +44,6 @@
     z-index: 1;
   }
 
-  &.navigation-style-02 {
-    background-color: transparent;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    min-height: 75px;
-    z-index: 3;
-
-    &.has-topbar {
-      top: 75px;
-    }
-
-    .custom-container {
-      background-color: transparent;
-      box-shadow: none;
-      border-radius: 0;
-
-      .logo-wrapper {
-        max-width: 200px;
-      }
-
-
-      .nav-right-content {
-        display: flex;
-        align-items: center;
-        margin-left: 80px;
-
-        ul {
-          li {
-            color: var(--main-color-one);
-
-            + li {
-              margin-left: 10px;
-            }
-
-            a {
-              .icon {
-                color: #fff;
-
-                i {
-                  transition: all 300ms ease-in;
-                }
-
-                &:hover {
-                  color: $white;
-                }
-              }
-            }
-          }
-        }
-
-        .info-items {
-          li {
-            font-weight: 700;
-          }
-        }
-
-        .btn-wrap {
-          margin-left: 50px;
-        }
-      }
-
-      .navbar-collapse {
-        .navbar-nav {
-          text-align: right;
-
-          li {
-            &.current-menu-item {
-              a {
-                color: var(--main-color-one);
-              }
-
-              &:before {
-                color: var(--main-color-one);
-              }
-            }
-
-            &.menu-item-has-children {
-              z-index: initial;
-
-              &:before {
-                color: var(--main-color-one);
-              }
-
-              .sub-menu {
-                li {
-                  a {
-                    background-color: #fff;
-                    color: var(--paragraph-color);
-
-                    &:hover {
-                      background-color: var(--main-color-one);
-                      color: #fff;
-                    }
-                  }
-                }
-
-                .menu-item-has-children {
-                  &:hover > .sub-menu {
-                    li {
-                      &:hover {
-                        &:before {
-                          color: $white;
-                        }
-                      }
-
-                      a {
-                      }
-                    }
-                  }
-                }
-              }
-            }
-
-            a {
-              @include transition($transition);
-              color: var(--main-color-one);
-            }
-
-            &:hover {
-              &.menu-item-has-children {
-                &:before {
-                  color: var(--main-color-one);
-                }
-              }
-
-              a {
-                color: var(--main-color-one);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 
   &.navigation-style-01 {
     background-color: $white;
@@ -299,7 +170,6 @@
   .custom-container {
     background-color: #fff;
     padding: 0 15px;
-    //max-width: 1680px;
 
     .nav-right-content {
       display: flex;
@@ -525,39 +395,6 @@
 
 @media only screen and (max-width: 991px) {
   .navbar-area {
-    &.navigation-style-02 {
-      .custom-container {
-        padding: 20px 15px;
-        background-color: var(--secondary-color);
-
-        &.style-01 {
-          background-color: #fff;
-        }
-
-        .navbar-toggler {
-          background-color: #fff;
-        }
-
-        .navbar-collapse {
-          .navbar-nav {
-            padding: 0;
-
-            li {
-              &.menu-item-has-children {
-                .sub-menu {
-                  li {
-                    a {
-                      background-color: transparent;
-                      color: var(--main-color-one);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
 
     &.navigation-style-01 {
       .custom-container {

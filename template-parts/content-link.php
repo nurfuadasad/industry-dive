@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 
-$yotta = yotta();
+$INDUSTRY_DIVE = INDUSTRY_DIVE();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-standard-item-01 margin-bottom-30'); ?>>

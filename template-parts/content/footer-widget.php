@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Footer Widget Template
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 

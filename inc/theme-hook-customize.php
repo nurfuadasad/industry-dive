@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Hooks Customize
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
@@ -9,9 +9,9 @@ if (!defined("ABSPATH")) {
     exit(); //exit if access directly
 }
 
-if (!class_exists('Yotta_Customize')) {
+if (!class_exists('INDUSTRY_DIVE_Customize')) {
 
-    class Yotta_Customize
+    class INDUSTRY_DIVE_Customize
     {
         /**
          * $instance
@@ -24,13 +24,13 @@ if (!class_exists('Yotta_Customize')) {
             //excerpt more
             add_action('excerpt_more', array($this, 'excerpt_more'));
             //preloader
-            add_action('yotta_after_body', array($this, 'preloader'));
+            add_action('INDUSTRY_DIVE_after_body', array($this, 'preloader'));
             //search popup
-            add_action('yotta_after_body', array($this, 'search_popup'));
+            add_action('INDUSTRY_DIVE_after_body', array($this, 'search_popup'));
             //breadcrumb
-            add_action('yotta_before_page_content', array($this, 'breadcrumb'));
+            add_action('INDUSTRY_DIVE_before_page_content', array($this, 'breadcrumb'));
             //back top
-            add_action('yotta_after_body', array($this, 'back_top'));
+            add_action('INDUSTRY_DIVE_after_body', array($this, 'back_top'));
             //order comment form
             add_filter('comment_form_fields', array($this, 'comment_fields_reorder'));
             // contact form 7
@@ -65,10 +65,10 @@ if (!class_exists('Yotta_Customize')) {
          */
         public function breadcrumb()
         {
-            $page_id = yotta()->page_id();
+            $page_id = INDUSTRY_DIVE()->page_id();
             $check_page = (!is_home() && !is_front_page() && is_singular()) || is_search() || is_author() || is_404() || is_archive() ? true : false;
-            $check_home_page = yotta()->is_home_page();
-            $page_header_meta = Yotta_Group_Fields_Value::page_container('yotta', 'header_options');
+            $check_home_page = INDUSTRY_DIVE()->is_home_page();
+            $page_header_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'header_options');
             $header_variant_class = isset($page_header_meta['navbar_type']) ? 'navbar-' . $page_header_meta['navbar_type'] : 'navbar-default';
             $page_breadcrumb_enable = isset($page_header_meta['page_breadcrumb_enable']) && $page_header_meta['page_breadcrumb_enable'] ? $page_header_meta['page_breadcrumb_enable'] : false;
             $breadcrumb_enable = false;
@@ -99,7 +99,7 @@ if (!class_exists('Yotta_Customize')) {
                             <div class="breadcrumb-content">
                                 <?php
                                 if ($page_header_meta['page_breadcrumb']) {
-                                    yotta_breadcrumb();
+                                    INDUSTRY_DIVE_breadcrumb();
                                 }
                                 if (is_archive()) {
                                     if (class_exists('WooCommerce') && is_shop()) {
@@ -108,9 +108,9 @@ if (!class_exists('Yotta_Customize')) {
                                         the_archive_title('<h2 class="page-title">', '</h2>');
                                     }
                                 } elseif (is_404()) {
-                                    printf('<h2 class="page-title">%1$s</h2>', esc_html__('Error 404', 'yotta'));
+                                    printf('<h2 class="page-title">%1$s</h2>', esc_html__('Error 404', 'INDUSTRY_DIVE'));
                                 } elseif (is_search()) {
-                                    printf('<h2 class="page-title">%1$s %2$s</h2>', esc_html__('Search Results for:', 'yotta'), get_search_query());
+                                    printf('<h2 class="page-title">%1$s %2$s</h2>', esc_html__('Search Results for:', 'INDUSTRY_DIVE'), get_search_query());
                                 } elseif (is_singular('post')) {
                                     printf('<h2 class="page-title">%1$s </h2>', get_the_title());
                                 } elseif (is_singular('page')) {
@@ -197,7 +197,7 @@ if (!class_exists('Yotta_Customize')) {
                 <form action="<?php echo esc_url(home_url('/')) ?>" class="search-form">
                     <div class="form-group">
                         <input type="text" name="s" class="form-control"
-                               placeholder="<?php echo esc_attr__('Search....', 'yotta'); ?>">
+                               placeholder="<?php echo esc_attr__('Search....', 'INDUSTRY_DIVE'); ?>">
                     </div>
                     <button class="close-btn border-none"><i class="fas fa-search"></i></button>
                 </form>
@@ -206,7 +206,7 @@ if (!class_exists('Yotta_Customize')) {
         }
 
     }//end class
-    if (class_exists('Yotta_Customize')) {
-        Yotta_Customize::getInstance();
+    if (class_exists('INDUSTRY_DIVE_Customize')) {
+        INDUSTRY_DIVE_Customize::getInstance();
     }
 }

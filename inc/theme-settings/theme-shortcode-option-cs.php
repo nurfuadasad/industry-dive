@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Shortcodes Generator
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
@@ -11,38 +11,38 @@ if (!defined('ABSPATH')){
 
 // Control core classes for avoid errors
 if( class_exists( 'CSF' ) ) {
-	$prefix = 'yotta';
+	$prefix = 'INDUSTRY_DIVE';
 	CSF::createShortcoder( $prefix.'_shortcodes', array(
-		'button_title'   => esc_html__('Add Shortcode','yotta'),
-		'select_title'   => esc_html__('Select a shortcode','yotta'),
-		'insert_title'   => esc_html__('Insert Shortcode','yotta')
+		'button_title'   => esc_html__('Add Shortcode','INDUSTRY_DIVE'),
+		'select_title'   => esc_html__('Select a shortcode','INDUSTRY_DIVE'),
+		'insert_title'   => esc_html__('Insert Shortcode','INDUSTRY_DIVE')
 	) );
 
 	/*------------------------------------
 		Social Icon Options
 	-------------------------------------*/
 	CSF::createSection( $prefix.'_shortcodes', array(
-		'title'     => esc_html__('Social Icons','yotta'),
+		'title'     => esc_html__('Social Icons','INDUSTRY_DIVE'),
 		'view'      => 'group',
-		'shortcode' => 'yotta_social_icon_wrap',
+		'shortcode' => 'INDUSTRY_DIVE_social_icon_wrap',
 		'fields' => [
             array(
                 'id'      => 'custom_class',
                 'type'    => 'text',
-                'title'   => esc_html__('Custom Class','yotta'),
+                'title'   => esc_html__('Custom Class','INDUSTRY_DIVE'),
             )
         ],
-		'group_shortcode' => 'yotta_social_icon',
+		'group_shortcode' => 'INDUSTRY_DIVE_social_icon',
 		'group_fields'    => array(
 			array(
 				'id'    => 'social_icon',
 				'type'  => 'icon',
-				'title' => esc_html__('Icon','yotta'),
+				'title' => esc_html__('Icon','INDUSTRY_DIVE'),
 			),
 			array(
 				'id'      => 'social_link',
 				'type'    => 'text',
-				'title'   => esc_html__('URL','yotta'),
+				'title'   => esc_html__('URL','INDUSTRY_DIVE'),
 			)
 		)
 	) );
@@ -51,20 +51,20 @@ if( class_exists( 'CSF' ) ) {
 		Top Menu Options
 	-------------------------------------*/
 	CSF::createSection( $prefix.'_shortcodes', array(
-		'title'     => esc_html__('Top Menu','yotta'),
+		'title'     => esc_html__('Top Menu','INDUSTRY_DIVE'),
 		'view'      => 'group',
-		'shortcode' => 'yotta_top_menu_wrap',
-		'group_shortcode' => 'yotta_top_menu',
+		'shortcode' => 'INDUSTRY_DIVE_top_menu_wrap',
+		'group_shortcode' => 'INDUSTRY_DIVE_top_menu',
 		'group_fields'    => array(
 			array(
 				'id'    => 'top_menu_text',
 				'type'  => 'text',
-				'title' => esc_html__('Text','yotta'),
+				'title' => esc_html__('Text','INDUSTRY_DIVE'),
 			),
 			array(
 				'id'      => 'top_menu_link',
 				'type'    => 'text',
-				'title'   => esc_html__('URL','yotta'),
+				'title'   => esc_html__('URL','INDUSTRY_DIVE'),
 			)
 		)
 	) );
@@ -73,25 +73,25 @@ if( class_exists( 'CSF' ) ) {
       Info Menu Options
     -------------------------------------*/
     CSF::createSection( $prefix.'_shortcodes', array(
-        'title'     => esc_html__('Info Menu','yotta'),
+        'title'     => esc_html__('Info Menu','INDUSTRY_DIVE'),
         'view'      => 'group',
-        'shortcode' => 'yotta_top_menu_wrap_02',
-        'group_shortcode' => 'yotta_top_menu_02',
+        'shortcode' => 'INDUSTRY_DIVE_top_menu_wrap_02',
+        'group_shortcode' => 'INDUSTRY_DIVE_top_menu_02',
         'group_fields'    => array(
             array(
                 'id'    => 'top_menu_title_text',
                 'type'  => 'text',
-                'title' => esc_html__('Text','yotta'),
+                'title' => esc_html__('Text','INDUSTRY_DIVE'),
             ),
             array(
                 'id'    => 'top_menu_text',
                 'type'  => 'text',
-                'title' => esc_html__('Text','yotta'),
+                'title' => esc_html__('Text','INDUSTRY_DIVE'),
             ),
             array(
                 'id'      => 'top_menu_link',
                 'type'    => 'text',
-                'title'   => esc_html__('URL','yotta'),
+                'title'   => esc_html__('URL','INDUSTRY_DIVE'),
             )
         )
     ) );
@@ -100,25 +100,25 @@ if( class_exists( 'CSF' ) ) {
 		Inline info link options
 	-------------------------------------*/
 	CSF::createSection( $prefix.'_shortcodes', array(
-		'title'     => esc_html__('Inline Info Link','yotta'),
+		'title'     => esc_html__('Inline Info Link','INDUSTRY_DIVE'),
 		'view'      => 'group',
-		'shortcode' => 'yotta_info_item_wrap',
-		'group_shortcode' => 'yotta_info_link',
+		'shortcode' => 'INDUSTRY_DIVE_info_item_wrap',
+		'group_shortcode' => 'INDUSTRY_DIVE_info_link',
 		'group_fields'    => array(
 			array(
 				'id'    => 'icon',
 				'type'  => 'icon',
-				'title' => esc_html__('Icon','yotta'),
+				'title' => esc_html__('Icon','INDUSTRY_DIVE'),
 			),
 			array(
 				'id'      => 'text',
 				'type'    => 'text',
-				'title'   => esc_html__('Text','yotta'),
+				'title'   => esc_html__('Text','INDUSTRY_DIVE'),
 			),
 			array(
 				'id'      => 'url',
 				'type'    => 'text',
-				'title'   => esc_html__('URL','yotta'),
+				'title'   => esc_html__('URL','INDUSTRY_DIVE'),
 			)
 		)
 	) );

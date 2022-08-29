@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Inline Style
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
@@ -13,17 +13,17 @@ if (!defined('ABSPATH')) {
  * Theme Inline CSS
  * @since 1.0.0
  * */
-global $yotta_inline_css;
-$backend = yotta();
-$yotta_inline_css = '';
-$prefix = 'yotta';
+global $INDUSTRY_DIVE_inline_css;
+$backend = INDUSTRY_DIVE();
+$INDUSTRY_DIVE_inline_css = '';
+$prefix = 'INDUSTRY_DIVE';
 ob_start();
 
 /*-----------------------------
 	Page options
 ------------------------------*/
-$page_id = yotta()->page_id();
-$page_meta = Yotta_Group_Fields_Value::page_container('yotta', 'container_options');
+$page_id = INDUSTRY_DIVE()->page_id();
+$page_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'container_options');
 $page_layout_meta = get_post_meta($page_id, $prefix . '_page_container_options', true);
 
 $page_bg_color = isset($page_layout_meta['page_bg_color']) && $page_layout_meta['page_bg_color'] ? $page_layout_meta['page_bg_color'] : '#ffffff';
@@ -73,4 +73,4 @@ CSS;
 
 }
 
-$yotta_inline_css = ob_get_clean();
+$INDUSTRY_DIVE_inline_css = ob_get_clean();

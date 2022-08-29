@@ -244,6 +244,6 @@
   }
 }
 ::selection{
-    background-color: $bg--base;
+    background-color: var(--main-color-one);
     color: $white;
 }

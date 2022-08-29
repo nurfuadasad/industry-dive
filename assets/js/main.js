@@ -60,15 +60,6 @@
         });
 
 
-        /*----------------------------------
-           Magnific popup activation
-       ----------------------------------*/
-        $('.video-play-btn').magnificPopup({
-            type: 'video',
-            removalDelay: 400,
-            preloader: false,
-        });
-
         /*-------------------------------
             back to top
         ------------------------------*/

@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 
-$yotta = yotta();
-$post_meta = get_post_meta(get_the_ID(), 'yotta_post_gallery_options', true);
+$INDUSTRY_DIVE = INDUSTRY_DIVE();
+$post_meta = get_post_meta(get_the_ID(), 'INDUSTRY_DIVE_post_gallery_options', true);
 $post_meta_gallery = isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images']) ? $post_meta['gallery_images'] : '';
-$post_single_meta = Yotta_Group_Fields_Value::post_meta('blog_single_post');
+$post_single_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_post');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-single-content-wrap'); ?>>
@@ -31,50 +31,50 @@ $post_single_meta = Yotta_Group_Fields_Value::post_meta('blog_single_post');
             <?php endif; ?>
             <ul class="post-meta">
                 <?php if ($post_single_meta['posted_by']): ?>
-                    <li><?php $yotta->posted_by(); ?></li>
+                    <li><?php $INDUSTRY_DIVE->posted_by(); ?></li>
                 <?php endif; ?>
                 <li>
                     <?php
-                    $yotta->posted_on();
+                    $INDUSTRY_DIVE->posted_on();
                     ?>
                 </li>
                 <li>
                     <?php
-                    $yotta->comment_count();
+                    $INDUSTRY_DIVE->comment_count();
                     ?>
                 </li>
             </ul>
         <?php endif;
         the_content();
-        $yotta->link_pages();
+        $INDUSTRY_DIVE->link_pages();
         ?>
     </div>
-    <?php if ('post' == get_post_type() && ((has_tag() && $post_single_meta['posted_tag']) || (shortcode_exists('yotta_post_share') && $post_single_meta['posted_share']))): ?>
+    <?php if ('post' == get_post_type() && ((has_tag() && $post_single_meta['posted_tag']) || (shortcode_exists('INDUSTRY_DIVE_post_share') && $post_single_meta['posted_share']))): ?>
         <div class="blog-details-footer">
             <?php if (has_tag() && $post_single_meta['posted_tag']): ?>
                 <div class="left">
-                    <h3 class="title"><?php echo esc_html__('Tags:', 'yotta') ?></h3>
-                    <?php $yotta->posted_tag(); ?>
+                    <h3 class="title"><?php echo esc_html__('Tags:', 'INDUSTRY_DIVE') ?></h3>
+                    <?php $INDUSTRY_DIVE->posted_tag(); ?>
                 </div>
             <?php endif; ?>
-            <?php if (shortcode_exists('yotta_post_share') && $post_single_meta['posted_share']) : ?>
+            <?php if (shortcode_exists('INDUSTRY_DIVE_post_share') && $post_single_meta['posted_share']) : ?>
                 <div class="right">
-                    <h3 class="title"><?php echo esc_html__('Social Share:', 'yotta') ?></h3>
+                    <h3 class="title"><?php echo esc_html__('Social Share:', 'INDUSTRY_DIVE') ?></h3>
                     <?php
-                    if (shortcode_exists('yotta_post_share') && $post_single_meta['posted_share']) {
-                        echo do_shortcode('[yotta_post_share]');
+                    if (shortcode_exists('INDUSTRY_DIVE_post_share') && $post_single_meta['posted_share']) {
+                        echo do_shortcode('[INDUSTRY_DIVE_post_share]');
                     }
                     ?>
                 </div>
             <?php endif; ?>
         </div>
     <?php endif;
-    if ($post_single_meta['next_post_nav_btn'] && $yotta->is_yotta_core_active()) {
-        echo wp_kses($yotta->post_navigation(), $yotta->kses_allowed_html('all'));
+    if ($post_single_meta['next_post_nav_btn'] && $INDUSTRY_DIVE->is_industry_dive_core_active()) {
+        echo wp_kses($INDUSTRY_DIVE->post_navigation(), $INDUSTRY_DIVE->kses_allowed_html('all'));
     }
-    if ($yotta->is_yotta_core_active()) {
+    if ($INDUSTRY_DIVE->is_industry_dive_core_active()) {
         if ($post_single_meta['get_related_post']) {
-            $yotta->get_related_post([
+            $INDUSTRY_DIVE->get_related_post([
                 'post_type' => 'post',
                 'taxonomy' => 'category',
                 'exclude_id' => get_the_ID(),

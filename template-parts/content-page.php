@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 ?>
 
@@ -13,7 +13,7 @@
 		<?php
 		the_content();
 
-		yotta()->link_pages();
+		INDUSTRY_DIVE()->link_pages();
 		?>
 	</div><!-- .entry-content -->
 </div><!-- #post-<?php the_ID(); ?> -->

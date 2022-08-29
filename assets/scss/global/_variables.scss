@@ -21,22 +21,21 @@ $bolb-color: #FFF200;
 $transition: all 0.3s ease-in;
 $transition-long: all 0.5s ease-in;
 
-/*-------------------------------------------------
-    [ ### font-variable start ]
-*/
-$font_heading: 'Spartan', sans-serif;
-$font_sub_heading: 'Spartan', sans-serif;
-$font_body: 'Poppins', sans-serif;
-/*-------------------------------------------------
-    [ ### initial-color-variable start ]
-*/
-$white: #ffffff; // white color
-$color__heading: #161616; // Heading color
-$color__text: #2A2A2A; // Text color
-$bg--base: #1958D8; // Background base color
-$text--base: #1958D8; // Text base color
-$border--base: #E2E2E2; // Border base color
-$section--bg: #000000; // Section bg color
-$body--bg: #ffffff; // Body bg color
-$bg--gray: #F1F7FF; // Gray bg color
-$bg--secondary: #9DBAFE; // Secondary bg color
+//Load Custome Font
+@font-face {
+  font-family: 'Invention-Regular';
+  src: url('../fonts/Invention-Regular.eot') format('eot'), url('../fonts/Invention-Regular.woff') format('woff'), url('../fonts/Invention-Regular.woff2') format('woff2'), url('../fonts/Invention-Regular.ttf') format('truetype'), url('../fonts/Invention-Regular.svg#Invention-Regular') format('svg');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Invention-ExtraBold';
+  src: url('../fonts/Invention-ExtraBold.eot') format('eot'), url('../fonts/Invention-ExtraBold.woff') format('woff'), url('../fonts/Invention-ExtraBold.woff2') format('woff2'), url('../fonts/Invention-ExtraBold-Book.ttf') format('truetype'), url('../fonts/Invention-ExtraBold.svg#CircularStd-Book') format('svg');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Invention-Bold';
+  src: url('../fonts/Invention-Bold.eot') format('eot'), url('../fonts/Invention-Bold.woff') format('woff'), url('../fonts/Invention-Bold.woff2') format('woff2'), url('../fonts/Invention-Bold.ttf') format('truetype'), url('../fonts/Invention-Bold.svg#Circular-Std-Bold') format('svg');
+  font-style: normal;
+}

@@ -1,25 +1,25 @@
 <?php
 /**
  * Post Thumbnail Gallery
- * @package yotta
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
 
-$yotta = yotta();
-$post_meta = get_post_meta(get_the_ID(),'yotta_post_gallery_options',true);
+$INDUSTRY_DIVE = INDUSTRY_DIVE();
+$post_meta = get_post_meta(get_the_ID(),'INDUSTRY_DIVE_post_gallery_options',true);
 $post_meta_gallery = isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images']) ? $post_meta['gallery_images'] : '';
 $gallery_image = explode(',',$post_meta_gallery);
-$blog_single_options = Yotta_Group_Fields_Value::post_meta('blog_single_post');
+$blog_single_options = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_post');
 ?>
 <?php
 if ( isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images']) ):
     ?>
-    <div id="yotta_post_gallery" class="carousel slide thumbnail" data-ride="carousel">
+    <div id="INDUSTRY_DIVE_post_gallery" class="carousel slide thumbnail" data-ride="carousel">
         <ol class="carousel-indicators">
             <?php
             for ($i =0; $i < count($gallery_image); $i++){
                 $class = 0 == $i ? 'active' : '';
-                printf('<li data-target="#yotta_post_gallery" data-slide-to="%2$s" class="%1$s"></li>',esc_attr($i),esc_attr($class));
+                printf('<li data-target="#INDUSTRY_DIVE_post_gallery" data-slide-to="%2$s" class="%1$s"></li>',esc_attr($i),esc_attr($class));
             }
             ?>
         </ol>
@@ -27,7 +27,7 @@ if ( isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images'])
             <?php
             for ($i=0; $i < count($gallery_image); $i++):
                 $class = 0 == $i ? 'active' : '';
-                $img_src = wp_get_attachment_image_src($gallery_image[$i],'yotta_classic');
+                $img_src = wp_get_attachment_image_src($gallery_image[$i],'INDUSTRY_DIVE_classic');
                 $img_alt = get_post_meta($gallery_image[$i],'wp_attachment_image_alt',true);
                 ?>
                 <div class="carousel-item <?php echo esc_attr($class);?>">
@@ -35,10 +35,10 @@ if ( isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images'])
                 </div>
             <?php endfor; ?>
         </div>
-        <a class="carousel-control-prev" href="#yotta_post_gallery" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#INDUSTRY_DIVE_post_gallery" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </a>
-        <a class="carousel-control-next" href="#yotta_post_gallery" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#INDUSTRY_DIVE_post_gallery" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </a>
     </div>
@@ -47,7 +47,7 @@ else:
     if ( has_post_thumbnail() ):
         ?>
         <div class="thumbnail">
-            <?php $yotta->post_thumbnail(); ?>
+            <?php $INDUSTRY_DIVE->post_thumbnail(); ?>
             <?php if (has_post_thumbnail()):?>
                 <div class="news-date">
                     <h5 class="title"><?php echo esc_html(get_the_date('d'))?></h5>

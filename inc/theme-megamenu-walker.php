@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Package Yotta
+ * Package INDUSTRY_DIVE
  * Author Irtech
  * @since 2.0.0
  * */
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')){
 	exit(); //exit if access directly
 }
 
-class Yotta_Megamenu_Walker extends Walker_Nav_Menu{
+class INDUSTRY_DIVE_Megamenu_Walker extends Walker_Nav_Menu{
 
 
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
@@ -22,7 +22,7 @@ class Yotta_Megamenu_Walker extends Walker_Nav_Menu{
 		$megamenu = get_post_meta( $item->ID, 'menu-item-mega-menu', true );
 
 		//If globally disable mega menu then remove
-		if(!YOTTA_CORE_SELF_PATH)
+		if(!INDUSTRY_DIVE_CORE_SELF_PATH)
 		{
 			$megamenu = '';
 		}
@@ -32,7 +32,7 @@ class Yotta_Megamenu_Walker extends Walker_Nav_Menu{
 
 		if($depth == 0 && !empty($megamenu))
 		{
-			$output .= "  yotta-megamenu ";
+			$output .= "  INDUSTRY_DIVE-megamenu ";
 		}
 
 		$output .= "'>";
@@ -41,11 +41,11 @@ class Yotta_Megamenu_Walker extends Walker_Nav_Menu{
 		$output .= $title;
 		$output .= '</a>';
 
-		if($depth == 0 && !empty($megamenu) && YOTTA_CORE_SELF_PATH)
+		if($depth == 0 && !empty($megamenu) && INDUSTRY_DIVE_CORE_SELF_PATH)
 		{
 			if(!empty($megamenu) && defined("ELEMENTOR_VERSION"))
 			{
-				$output .= '<div class="elementor-megamenu-wrap yotta-megamenu-wapper"> '.Yotta()->render_elementor_content($megamenu).'</div>';
+				$output .= '<div class="elementor-megamenu-wrap INDUSTRY_DIVE-megamenu-wapper"> '.INDUSTRY_DIVE()->render_elementor_content($megamenu).'</div>';
 			}
 		}
 	}

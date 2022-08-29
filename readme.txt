@@ -1,11 +1,11 @@
-Yotta – Its unique features and functionalities make it the ideal solution for websites dedicated to private flights, aircrafts, charters or any other businesses related to private airlines. The theme is well suited for all types of flight services: private jet, regional airliner, long range jet, small prop, aircraft spotlight, private helicopter, charter air ambulance or air taxi.
+INDUSTRY_DIVE – Its unique features and functionalities make it the ideal solution for websites dedicated to private flights, aircrafts, charters or any other businesses related to private airlines. The theme is well suited for all types of flight services: private jet, regional airliner, long range jet, small prop, aircraft spotlight, private helicopter, charter air ambulance or air taxi.
 https://themeim.com/forums/
 
 
 == Installation ==
 Manual installation:
 
-1. Upload the `yotta` folder to the `/wp-content/themes/` directory
+1. Upload the `INDUSTRY_DIVE` folder to the `/wp-content/themes/` directory
 
 Activation and Use
 
@@ -24,7 +24,7 @@ The exceptions to this license are as follows:
 
 == Theme Notes ==
 About the theme in the following link.
-https://themeim.com/wp/doc/yotta
+https://themeim.com/wp/doc/INDUSTRY_DIVE
 
 You can drop your queries in our contact form in the following link.
 https://themeim.com/forums/

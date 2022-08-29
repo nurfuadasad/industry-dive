@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 
 ?>
@@ -22,14 +22,14 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <?php
-do_action( 'yotta_after_body' );
-$page_container_meta = Yotta_Group_Fields_Value::page_container( 'yotta', 'header_options' );
+do_action( 'INDUSTRY_DIVE_after_body' );
+$page_container_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container( 'INDUSTRY_DIVE', 'header_options' );
 ?>
 
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'yotta' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'INDUSTRY_DIVE' ); ?></a>
     <header id="masthead" class="site-header">
     <?php get_template_part('template-parts/header/header',$page_container_meta['navbar_type']);?>
     </header><!-- #masthead -->
-	<?php do_action( 'yotta_before_page_content' ) ?>
+	<?php do_action( 'INDUSTRY_DIVE_before_page_content' ) ?>
     <div id="content" class="site-content">

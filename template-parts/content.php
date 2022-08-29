@@ -4,11 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 
-$yotta = yotta();
-$post_meta = Yotta_Group_Fields_Value::post_meta('blog_post');
+$INDUSTRY_DIVE = INDUSTRY_DIVE();
+$post_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_post');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-standard-item-01'); ?>>
     <?php

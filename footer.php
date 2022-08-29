@@ -6,10 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package yotta
+ * @package INDUSTRY_DIVE
  */
 
-$page_container_meta = Yotta_Group_Fields_Value::page_container('yotta', 'header_options');
+$page_container_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'header_options');
 ?>
 
 </div><!-- #content -->

@@ -1,5 +1,5 @@
 {
-  "name": "yotta",
+  "name": "INDUSTRY_DIVE",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "android >= 4",
     "bb >= 10"
   ],
-  "description": "Yotta – Its unique features and functionalities make it the ideal solution for websites dedicated to private flights, aircrafts, charters or any other businesses related to private airlines. The theme is well suited for all types of flight services: private jet, regional airliner, long range jet, small prop, aircraft spotlight, private helicopter, charter air ambulance or air taxi. https://themeim.com/forums/",
+  "description": "INDUSTRY_DIVE – Its unique features and functionalities make it the ideal solution for websites dedicated to private flights, aircrafts, charters or any other businesses related to private airlines. The theme is well suited for all types of flight services: private jet, regional airliner, long range jet, small prop, aircraft spotlight, private helicopter, charter air ambulance or air taxi. https://themeim.com/forums/",
   "dependencies": {
     "abbrev": "^1.1.1",
     "acorn": "^6.4.2",
@@ -481,10 +481,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nurfuadasad/yotta.git"
+    "url": "git+https://github.com/nurfuadasad/INDUSTRY_DIVE.git"
   },
   "bugs": {
-    "url": "https://github.com/nurfuadasad/yotta/issues"
+    "url": "https://github.com/nurfuadasad/INDUSTRY_DIVE/issues"
   },
-  "homepage": "https://github.com/nurfuadasad/yotta#readme"
+  "homepage": "https://github.com/nurfuadasad/INDUSTRY_DIVE#readme"
 }
