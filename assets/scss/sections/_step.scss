@@ -1,0 +1,102 @@
+/*-------------------------------------------------
+    [ ### steps block ]
+*/
+.steps-section{
+    position: relative;
+    margin-top: 120px;
+    @media only screen and (max-width: 1750px) {
+        margin-top: 0;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 85%;
+        height: 100%;
+        background: transparent linear-gradient(90deg, #741ADB 0%, #1958D8 100%) 0% 0% no-repeat padding-box;
+        @media only screen and (max-width: 1199px) {
+            width: 100%;
+        }
+    }
+    .steps-thumb{
+        position: absolute;
+        bottom: 73px;
+        right: 0;
+        @media only screen and (max-width: 1750px) {
+            width: 37%;
+        }
+        @media only screen and (max-width: 1750px) {
+            width: 34%;
+            bottom: 137px;
+        }
+        @media only screen and (max-width: 991px) {
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            margin: 0 15px;
+            margin-top: 30px;
+        }
+    }
+}
+.steps-wrapper{
+    .steps-header{
+        margin-bottom: 50px;
+        .title{
+            color: $white;
+            margin-top: -10px;
+        }
+        p{
+            color: $white;
+        }
+    }
+    .steps-item-area{
+        margin-bottom: -30px;
+        .steps-item{
+            background-color: $white;
+            border-radius: 7px;
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            @media only screen and (max-width: 575px) {
+                display: block;
+                padding: 20px;
+            }
+            .steps-icon{
+                width: 74px;
+                height: 74px;
+                line-height: 74px;
+                display: inline-block;
+                text-align: center;
+                background: transparent linear-gradient(87deg, #1958D8 0%, #7D3AE5 100%) 0% 0% no-repeat padding-box;
+                box-shadow: 0px 10px 20px #1958D847;
+                border-radius: 50%;
+                color: $white;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    top: 15%;
+                    left: -30%;
+                    width: 1px;
+                    height: 53px;
+                    background-color: #CEE3FF;
+                    @media only screen and (max-width: 575px) {
+                        display: none;
+                    }
+                }
+            }
+            .steps-content{
+                width: calc(100% - 100px);
+                @media only screen and (max-width: 575px) {
+                    width: 100%;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}

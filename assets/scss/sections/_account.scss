@@ -1,0 +1,130 @@
+/*-------------------------------------------------
+    [ ### contact block ]
+*/
+.account-section{
+  position: relative;
+  .account-element-one{
+      position: absolute;
+      left: 15%;
+      top: 10%;
+      animation: scroll-down 3s linear infinite;
+      @media only screen and (max-width: 1650px) {
+          display: none;
+      }
+  }
+  .account-element-two{
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      animation: horizontal-move 3s linear infinite;
+      @media only screen and (max-width: 1650px) {
+          display: none;
+      }
+  }
+}
+.account-form-area{
+  background-color: #F1F7FF;
+  border-radius: 6px;
+  padding: 40px;
+  @media only screen and (max-width: 991px) {
+      padding: 20px;
+  }
+  .title{
+      margin-bottom: 35px;
+  }
+  .pera{
+      margin-bottom: 30px;
+  }
+  .invalid-area{
+      background-color: #CEE3FF;
+      padding: 15px 20px;
+      border-radius: 3px;
+      margin-bottom: 30px;
+      p{
+          color: $text--base;
+          margin-bottom: 0;
+          i{
+              margin-right: 15px;
+              @media only screen and (max-width: 991px) {
+                  margin-right: 5px;
+              }
+          }
+      }
+  }
+  .account-form{
+      label{
+          color: $color__text;
+          font-weight: 500;
+          font-size: 16px;
+          margin-bottom: 15px;
+          @media only screen and (max-width: 991px) {
+              font-size: 14px;
+          }
+      }
+      .form--control{
+          border: 1px solid transparent;
+          background-color: $white;
+          border-radius: 3px;
+          height: 55px;
+          color: #535353;
+          font-family: $font_body;
+          padding: 10px 20px;
+          font-weight: 400;
+          font-size: 16px;
+          &:focus{
+              border: 1px solid $bg--base;
+              background-color: $white;
+              color: #535353;
+          }
+          &::placeholder{
+              color: #535353;
+          }
+      }
+      button{
+          border-radius: 6px;
+      }
+  }
+  .forgot-password-area{
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      @media only screen and (max-width: 375px) {
+          display: block;
+      }
+      .custom-check-group{
+          margin-bottom: 0;
+          @media only screen and (max-width: 375px) {
+              margin-bottom: 10px;
+          }
+          label{
+              margin-bottom: 0;
+              font-size: 16px;
+              @media only screen and (max-width: 991px) {
+                  font-size: 14px;
+              }
+              &::before{
+                  border: 1px solid $bg--base;
+                  border-radius: 50%;
+              }
+              &::after{
+                  top: 4px;
+              }
+          }
+      }
+  }
+}
+.account-area{
+  .account-change-area{
+      margin-top: 60px;
+      @media only screen and (max-width: 991px) {
+          margin-top: 40px;
+      }
+      a{
+          color: $text--base;
+          font-weight: 500;
+          text-decoration: underline;
+      }
+  }
+}

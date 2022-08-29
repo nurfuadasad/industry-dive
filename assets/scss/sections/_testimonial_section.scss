@@ -1,0 +1,77 @@
+/*-------------------------
+    Testimonial Section
+--------------------------*/
+.client-section{
+    position: relative;
+    overflow: hidden;
+    .client-element{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        img{
+            filter: grayscale(100%);
+        }
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    .client-element-one{
+        position: absolute;
+        bottom: 11%;
+        left: 7%;
+    }
+    .slider-next,.slider-prev{
+        position: absolute;
+        bottom: -10px;
+        background-color: transparent;
+        color: #9DBAFE;
+        font-size: 30px;
+        @media only screen and (max-width: 1590px) {
+            display: none;
+        }
+        &:hover{
+            color: $text--base;
+        }
+    }
+    .slider-prev{
+        left: 40%;
+    }
+    .slider-next{
+        right: 39%;
+    }
+    .client-pagination {
+        text-align: center;
+        margin-top: 60px;
+        @media only screen and (max-width: 991px) {
+            margin-top: 40px;
+        }
+        span{
+            color: #CECECE;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            z-index: 9;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            background: transparent;
+            text-align: center;
+            opacity: 1;
+            outline: none;
+            display: inline-block;
+            margin: 0 20px !important;
+            &::before{
+                content: '0';
+            }
+            &.swiper-pagination-bullet-active{
+                color: $text--base;
+            }
+        }
+    }
+    .swiper-pagination-clickable{
+        .swiper-pagination-bullet{
+            cursor: pointer;
+        }
+    }
+}

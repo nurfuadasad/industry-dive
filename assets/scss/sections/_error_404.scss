@@ -1,0 +1,42 @@
+/*-------------------------------------------------
+    [ ### 404 block ]
+*/
+.four-not-four-section{
+    position: relative;
+    .four-not-four-element-one{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .four-not-four-element-two{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .row{
+        min-height: 100vh;
+    }
+}
+.four-not-four-thumb{
+    position: relative;
+    z-index: 2;
+    .four-not-four-thumb-element{
+        position: absolute;
+        top: 60px;
+        left: 100px;
+        z-index: -1;
+        animation: rotate 30s linear infinite;
+    }
+}
+.four-not-four-content{
+    padding-top: 30px;
+    .title{
+        margin-bottom: 20px;
+    }
+    .four-not-four-btn{
+        margin-top: 50px;
+        a{
+            border-radius: 6px;
+        }
+    }
+}

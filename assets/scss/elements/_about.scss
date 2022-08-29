@@ -1,0 +1,135 @@
+/*-------------------------------------------------
+    [ ### about block ]
+*/
+.about-section{
+    position: relative;
+    overflow: hidden;
+    .about-element-one{
+        position: absolute;
+        bottom: 30%;
+        right: 0;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    .about-element-two{
+        position: absolute;
+        bottom: 20%;
+        left: 12%;
+        animation: rotate 40s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    .about-element-three{
+        position: absolute;
+        top: 12%;
+        left: 8%;
+        animation: scroll-ver 3s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+}
+.about-area{
+    margin-bottom: 120px;
+    @media only screen and (max-width: 991px) {
+        margin-bottom: 80px;
+    }
+}
+.about-thumb{
+    position: relative;
+    z-index: 2;
+    .about-thumb-element{
+        position: absolute;
+        top: -33%;
+        right: -16%;
+        z-index: -1;
+        animation: scroll-down 3s linear infinite;
+        @media only screen and (max-width: 1199px) {
+            top: -26%;
+            right: 45%;
+        }
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+}
+.about-content{
+    margin-left: 80px;
+    @media only screen and (max-width: 1199px) {
+        margin-left: 0;
+    }
+    .sub-title{
+        color: $text--base;
+        font-weight: 600;
+        font-size: 16px;
+        background: transparent linear-gradient(270deg, #FFFFFF00 0%, #1958D825 100%) 0% 0% no-repeat padding-box;
+        letter-spacing: 0.8px;
+        font-family: $font_body;
+        padding: 3px 8px;
+        border-left: 2px solid $bg--base;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @media only screen and (max-width: 991px) {
+            font-size: 14px;
+        }
+    }
+    .title{
+        width: 90%;
+        margin-bottom: 20px;
+        margin-top: -2px;
+        @media only screen and (max-width: 991px) {
+            width: 100%;
+        }
+    }
+}
+.about-video-area{
+    position: relative;
+    padding: 40px;
+    border-radius: 6px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 2;
+    margin-bottom: 20px;
+    @media only screen and (max-width: 991px) {
+        padding: 25px;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        border-radius: 6px;
+        z-index: 1;
+    }
+    .about-video{
+        position: relative;
+        z-index: 2;
+    }
+    .about-video-content{
+        width: calc(100% - 150px);
+        padding-left: 40px;
+        position: relative;
+        z-index: 2;
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 30px;
+        }
+    }
+    .bottom-shape{
+        background: $bg--base;
+        opacity: .2;
+        &::after{
+            background: $bg--base;
+            bottom: -8px;
+        }
+    }
+}

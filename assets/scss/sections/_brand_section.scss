@@ -1,0 +1,23 @@
+// Brand Section Styling Here
+.brand-section{
+    position: relative;
+    overflow: hidden;
+    .brand-element-one{
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    .brand-element-two{
+        position: absolute;
+        top: 30%;
+        right: 0;
+        animation: scroll-down 3s linear infinite;
+        @media only screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+}

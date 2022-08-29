@@ -1,0 +1,28 @@
+.plan-section{
+    background-color: #D8EFEF;
+    position: relative;
+    overflow: hidden;
+    .plan-element{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .plan-element-one{
+        position: absolute;
+        top: 45%;
+        left: 5%;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    .plan-element-two{
+        position: absolute;
+        top: 10%;
+        right: 0;
+        animation: scroll-down 3s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+}

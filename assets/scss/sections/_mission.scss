@@ -1,0 +1,75 @@
+/*-------------------------------------------------
+    [ ### mission block ]
+*/
+.mission-tab{
+  .nav-tabs{
+      border: none;
+      justify-content: center;
+      padding: 0;
+      padding-bottom: 60px;
+      @media only screen and (max-width: 991px) {
+          padding-bottom: 0;
+          display: flex;
+      }
+      .nav-link{
+          background-color: #F1F7FF;
+          border-radius: 6px;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 10px 30px;
+          @media only screen and (max-width: 991px) {
+              font-size: 14px;
+              width: auto;
+          }
+          @media only screen and (max-width: 575px) {
+              padding: 6px 12px;
+              font-size: 12px;
+          }
+          &:hover{
+              color: $color__heading;
+          }
+          &.active{
+              background: transparent linear-gradient(89deg, #1958D8 0%, #7D3AE5 100%) 0% 0% no-repeat padding-box;
+              color: $white;
+          }
+          &:not(:last-child) {
+              margin-right: 15px;
+              @media only screen and (max-width: 991px) {
+                  margin-bottom: 0;
+              }
+              @media only screen and (max-width: 575px) {
+                  margin-right: 5px;
+              }
+          }
+      }
+  }
+}
+.mission-tab-content{
+  text-align: center;
+  .title{
+      margin-bottom: 20px;
+  }
+}
+.mission-thumb{
+  margin-top: 30px;
+  border-radius: 10px;
+  position: relative;
+  img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .mission-video{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      .waves{
+          opacity: 0;
+      }
+      .video-icon{
+          background-color: transparent;
+          border: 2px solid $white;
+          color: $white;
+      }
+  }
+}

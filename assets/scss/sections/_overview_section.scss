@@ -1,0 +1,23 @@
+.overview-section{
+    background-color: #FBFAFF;
+    position: relative;
+    overflow: hidden;
+    .overview-element-one{
+        position: absolute;
+        top: 45%;
+        left: 0;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    .overview-element-two{
+        position: absolute;
+        top: 50%;
+        right: -5%;
+        animation: scroll-down 3s linear infinite;
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+}

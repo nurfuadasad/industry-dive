@@ -1,0 +1,43 @@
+/*-------------------------------------------------
+    [ ### specification block ]
+*/
+.specification-item{
+    border: 1px dashed #CEE3FF;
+    padding: 15px 30px;
+    border-radius: 6px;
+    transition: all 0.5s;
+    @media only screen and (max-width: 991px) {
+        padding: 15px;
+    }
+    &:hover{
+        background-color: $bg--base;
+        border: 1px dashed $bg--base;
+        p{
+            color: $white;
+            &::before{
+                color: $white;
+            }
+        }
+    }
+    p{
+        font-size: 18px;
+        position: relative;
+        padding-left: 30px;
+        transition: all 0.5s;
+        @media only screen and (max-width: 991px) {
+            font-size: 16px;
+        }
+        &::before{
+            position: absolute;
+            content: '\f00c';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: $text--base;
+            font-family: "FontAwesome";
+            font-weight: 900;
+            transition: all 0.5s;
+        }
+    }
+}

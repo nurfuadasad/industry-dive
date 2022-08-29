@@ -1,0 +1,26 @@
+/*-------------------------------------------------
+    [ ### affiliate-list block ]
+*/
+.affiliate-list-item{
+  p{
+      position: relative;
+      padding-left: 35px;
+      font-weight: 500;
+      &::before{
+          position: absolute;
+          content: '\f00c';
+          font-family: "FontAwesome";
+          top: 0;
+          left: 0;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          display: inline-block;
+          text-align: center;
+          background-color: rgba($bg--base, 0.12);
+          border-radius: 3px;
+          color: $text--base;
+          font-weight: 900;
+      }
+  }
+}

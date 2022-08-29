@@ -1,0 +1,88 @@
+/*-------------------------------------------------
+    [ ### domain-registration block ]
+*/
+.domain-registration-section{
+    position: relative;
+    .domain-registration-element{
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+    }
+}
+.domain-registration-item{
+    background-color: $white;
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.5s;
+    &:hover{
+        box-shadow: 0 12px 25px rgba($bg--base, 0.18);
+        .domain-registration-price{
+            .price{
+                span{
+                    color: $text--base;
+                }
+            }
+        }
+        .domain-registration-btn{
+            a{
+                &.active{
+                    color: $white;
+                    &::before{
+                        right: auto;
+                        left: 0;
+                        width: 100%;
+                    }
+                    &:hover{
+                        border: 2px solid $bg--base;
+                    }
+                }
+            }
+        }
+    }
+    .domain-category{
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        @media only screen and (max-width: 991px) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .domain-registration-price{
+        margin-bottom: 20px;
+        .price{
+            font-size: 40px;
+            font-weight: 600;
+            color: $text--base;
+            @media only screen and (max-width: 991px) {
+                font-size: 30px;
+            }
+            span{
+                font-size: 16px;
+                color: $color__text;
+                font-weight: 400;
+                transition: all 0.5s;
+                @media only screen and (max-width: 991px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+.domain-registration-btn{
+    margin-top: 30px;
+    a{
+        &.active{
+            width: 100%;
+            border-radius: 6px;
+            border: 2px solid $bg--base;
+            color: $text--base;
+            &::before{
+                background: transparent linear-gradient(89deg, #1958D8 0%, #7D3AE5 100%) 0% 0% no-repeat padding-box;
+            }
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+}

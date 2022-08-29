@@ -1,0 +1,69 @@
+/*-------------------------------------------------
+    [ ### manage-hosting block ]
+*/
+.manage-hosting-content{
+    .sub-title{
+        color: $text--base;
+        font-weight: 600;
+        font-size: 16px;
+        background: transparent linear-gradient(270deg, #FFFFFF00 0%, #1958D825 100%) 0% 0% no-repeat padding-box;
+        letter-spacing: 0.8px;
+        font-family: $font_body;
+        padding: 3px 8px;
+        border-left: 2px solid $bg--base;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    .title{
+        margin-bottom: 15px;
+    }
+    .manage-hosting-btn{
+        margin-top: 40px;
+    }
+    &.two{
+        .manage-hosting-btn{
+            a{
+                border-radius: 6px;
+            }
+        }
+    }
+}
+.manage-hosting-thumb{
+    position: relative;
+    .manage-hosting-thumb-element-one{
+        position: absolute;
+        bottom: 30%;
+        left: 0;
+        animation: rotate 8s linear infinite;
+    }
+    .manage-hosting-thumb-element-two{
+        position: absolute;
+        top: 0;
+        left: 40%;
+        animation: rotate 10s linear infinite;
+    }
+    .manage-hosting-thumb-element-three{
+        position: absolute;
+        top: 60%;
+        right: 5%;
+        animation: rotate 10s linear infinite;
+    }
+    .manage-hosting-thumb-element-four{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        animation: rotate 10s linear infinite;
+    }
+    .manage-hosting-thumb-element-five{
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        animation: scroll-down 3s linear infinite;
+    }
+    .manage-hosting-thumb-element-six{
+        position: absolute;
+        top: 0;
+        right: 15%;
+        animation: scroll-ver 3s linear infinite;
+    }
+}

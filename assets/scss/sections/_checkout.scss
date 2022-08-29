@@ -1,0 +1,218 @@
+/*-------------------------------------------------
+    [ ### checkout block ]
+*/
+.checkout-section{
+    position: relative;
+    .checkout-element-one{
+        position: absolute;
+        top: 5%;
+        left: 8%;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 1500px) {
+            display: none;
+        }
+    }
+    .checkout-element-two{
+        position: absolute;
+        top: 30%;
+        right: 3%;
+        animation: scroll-down 3s linear infinite;
+        @media only screen and (max-width: 1500px) {
+            display: none;
+        }
+    }
+    .checkout-element-three{
+        position: absolute;
+        bottom: 20%;
+        left: 3%;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 1500px) {
+            display: none;
+        }
+    }
+}
+.checkout-coupon-code-area{
+    background-color: #F1F7FF;
+    padding: 20px;
+    border-top: 3px solid $bg--base;
+    margin-bottom: 15px;
+    p{
+        font-weight: 500;
+        a{
+            color: $text--base;
+            text-decoration: underline;
+        }
+        i{
+            font-size: 24px;
+            margin-right: 15px;
+            position: relative;
+            top: 4px;
+        }
+    }
+}
+.checkout-coupon-form-area{
+    background-color: #F1F7FF;
+    padding: 20px;
+    .checkout-coupon-code-form{
+        display: flex;
+        @media only screen and (max-width: 575px) {
+            display: block;
+        }
+        input{
+            width: 82.5%;
+            @media only screen and (max-width: 1199px) {
+                width: 79%;
+            }
+            @media only screen and (max-width: 991px) {
+                width: 75%;
+            }
+            @media only screen and (max-width: 767px) {
+                width: 65%;
+            }
+            @media only screen and (max-width: 575px) {
+                width: 100%;
+            }
+        }
+        button{
+            border-radius: 6px;
+            margin-left: 20px;
+            @media only screen and (max-width: 575px) {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+.checkout-wrapper{
+    border-top: 1px dashed #CBCBCB;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+.billing-form-area{
+    background-color: #F1F7FF;
+    padding: 30px;
+    @media only screen and (max-width: 991px) {
+        padding: 20px;
+    }
+    .title{
+        margin-bottom: 30px;
+    }
+    .billing-form{
+        margin-bottom: -20px;
+        label{
+            margin-bottom: 15px;
+            @media only screen and (max-width: 991px) {
+                font-size: 13px;
+            }
+        }
+        .form--control{
+            border-radius: 0;
+        }
+        .nice-select{
+            margin-bottom: 20px;
+            span{
+                color: #505050;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            .list{
+                li{
+                    font-weight: 600;
+                }
+            }
+            &::after{
+                border-bottom: 2px solid $bg--base;
+                border-right: 2px solid $bg--base;
+                right: 18px;
+                margin-top: -5px;
+            }
+            &:focus{
+                span{
+                    color: $color__heading;
+                }
+                &::after{
+                    border-bottom: 2px solid $bg--base;
+                    border-right: 2px solid $bg--base;
+                }
+            }
+        }
+    }
+    &.two{
+        margin-top: 30px;
+        .title{
+            margin-bottom: 15px;
+        }
+    }
+}
+.checkout-order-area{
+    position: sticky;
+    top: 15%;
+    background-color: #F1F7FF;
+    padding: 30px;
+    @media only screen and (max-width: 991px) {
+        padding: 20px;
+    }
+    .title{
+        margin-bottom: 30px;
+    }
+    .checkout-order-list-header{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        span{
+            font-weight: 500;
+        }
+    }
+    .checkout-order-list{
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #CBCBCB;
+        margin-bottom: 20px;
+        li{
+            color: #7B7B7B;
+            padding-bottom: 10px;
+            @media only screen and (max-width: 991px) {
+                font-size: 13px;
+            }
+            span{
+                float: right;
+            }
+        }
+        &.two{
+            li{
+                color: $color__text;
+                font-weight: 500;
+            }
+        }
+    }
+    .checkout-order-form{
+        .radio-item{
+            label{
+                @media only screen and (max-width: 991px) {
+                    font-size: 13px;
+                }
+            }
+        }
+        .custom-check-group input:checked + label::after{
+            top: 4px;
+        }
+        .custom-check-group label{
+            color: $text--base;
+            @media only screen and (max-width: 991px) {
+                font-size: 13px;
+            }
+            @media only screen and (max-width: 575px) {
+                font-size: 11px;
+            }
+            a{
+                color: $color__text;
+                text-decoration: underline;
+            }
+        }
+        button{
+            border-radius: 6px;
+        }
+    }
+}

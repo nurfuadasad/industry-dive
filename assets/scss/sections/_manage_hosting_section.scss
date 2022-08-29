@@ -1,0 +1,32 @@
+.manage-hosting-section{
+    background-color: #FBFAFF;
+    position: relative;
+    overflow: hidden;
+    .manage-hosting-element-one{
+        position: absolute;
+        top: 30%;
+        left: 0;
+        animation: zoominoutsinglefeatured 5s linear infinite;
+        @media only screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    .manage-hosting-element-two{
+        position: absolute;
+        top: 12%;
+        right: 10%;
+        animation: rotate 40s linear infinite;
+        @media only screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    .manage-hosting-element-three{
+        position: absolute;
+        top: 40%;
+        right: 5%;
+        animation: scroll-down 3s linear infinite;
+        @media only screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+}

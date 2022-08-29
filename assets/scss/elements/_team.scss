@@ -1,0 +1,104 @@
+/*--------------------------------------------------------------
+# Team-block
+--------------------------------------------------------------*/
+.team-slider-area{
+    margin: -30px;
+}
+.team-slider{
+    overflow: hidden;
+    padding: 30px;
+    .swiper-slide{
+        &:nth-child(3n-1){
+            .team-thumb{
+                background-color: #D7A5F2;
+                &:hover{
+                    box-shadow: 0 15px 35px #D7A5F2;
+                }
+            }
+        }
+        &:nth-child(3n-2){
+            .team-thumb{
+                background-color: #91BDFC;
+                &:hover{
+                    box-shadow: 0 15px 35px #91BDFC;
+                }
+            }
+        }
+        &:nth-child(3n-3){
+            .team-thumb{
+                background-color: #E5D36B;
+                &:hover{
+                    box-shadow: 0 15px 35px #E5D36B;
+                }
+            }
+        }
+    }
+}
+.team-item{
+    text-align: center;
+}
+.team-thumb{
+    background-color: #F9AC6C;
+    border-radius: 10px;
+    padding-top: 60px;
+    transition: all 0.5s;
+    position: relative;
+    &:hover{
+        box-shadow: 0 15px 35px #F9AC6C;
+        .team-social-area{
+            transform: translateX(-50%) scale(1);
+        }
+    }
+    .team-social-area{
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        transition: all 0.5s;
+    }
+    .team-social{
+        max-width: 200px;
+        background-color: $white;
+        border-radius: 999px;
+        padding: 10px;
+        @media only screen and (max-width: 1199px) {
+            max-width: none;
+            min-width: 180px;
+        }
+        li{
+            display: inline-block;
+            a{
+                width: 26px;
+                height: 26px;
+                line-height: 26px;
+                display: inline-block;
+                text-align: center;
+                border: 1px solid $bg--base;
+                border-radius: 50%;
+                color: $text--base;
+                transition: all 0.3s;
+                &:hover{
+                    background-color: $bg--base;
+                    color: $white;
+                }
+            }
+            &+li{
+                margin-left: 5px;
+            }
+        }
+    }
+}
+.team-content{
+    padding-top: 20px;
+    .title{
+        a{
+            transition: all 0.3s;
+            &:hover{
+                color: $text--base;
+            }
+        }
+    }
+    .sub-title{
+        font-weight: 500;
+    }
+}

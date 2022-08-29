@@ -1,0 +1,19 @@
+/*-------------------------------------------------
+    [ ### wp-feature block ]
+*/
+.wp-feature-item{
+    text-align: center;
+    background-color: #F1F7FF;
+    border-radius: 10px;
+    padding: 30px 20px;
+    transition: all 0.5s;
+    &:hover{
+        background-color: $white;
+        box-shadow: 0 3px 30px rgba($bg--base, 0.14);
+    }
+    .wp-feature-icon{
+        color: $text--base;
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+}

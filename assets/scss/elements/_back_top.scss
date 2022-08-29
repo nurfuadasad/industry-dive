@@ -1,0 +1,31 @@
+/*-------------------------------------------------
+    [ ## scrollToTop ]
+*/
+.scrollToTop {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-weight: 600;
+    background-color: $bg--base;
+    color: $white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 99;
+    cursor: pointer;
+    transition: all 1s;
+    transform: translateY(-5000%);
+} 
+.scrollToTop.active {
+    bottom: 30px;
+    transform: translateY(0%);
+    @media only screen and (max-width: 1270px) {
+        bottom: 30px;
+    }
+}
+.scrollToTop:hover, .scrollToTop:focus {
+    color: $white;
+}
