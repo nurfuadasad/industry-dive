@@ -131,3 +131,13 @@ function industry_loadmore_ajax_handler(){
 
 add_action('wp_ajax_loadmore', 'industry_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'industry_loadmore_ajax_handler');
+
+
+/**
+ * Nav menu fallback function
+ * @since 1.0.0
+ */
+function ww_load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'ww_load_dashicons');
