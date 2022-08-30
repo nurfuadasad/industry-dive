@@ -47,7 +47,7 @@ $post_data = new \WP_Query($args);
                                 <div class="thumb-content style-02">
                                     <?php
                                     echo '<div class="cats"><span>';
-                                    esc_html_e('Featured', 'INDUSTRY_DIVE');
+                                    esc_html_e('Featured', 'industry_dive');
                                     echo '</span>';
                                     the_category(', ');
                                     echo '</div>';
@@ -57,9 +57,9 @@ $post_data = new \WP_Query($args);
                                     </h4>
                                     <div class="post-mete-bottom">
                                     <span class="read-min"><?php echo INDUSTRY_DIVE()->estimate_reading_time_in_minutes(get_the_content(), 200, true);
-                                        esc_html_e(' Min Read', 'INDUSTRY_DIVE'); ?></span>|
+                                        esc_html_e(' Min Read', 'industry_dive'); ?></span>|
                                         <a class="read-btn"
-                                           href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'INDUSTRY_DIVE'); ?>
+                                           href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'industry_dive'); ?>
                                             <span class="dashicons dashicons-arrow-right-alt"></span></a>
                                     </div>
                                 </div>

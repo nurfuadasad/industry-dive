@@ -5,9 +5,9 @@
  * @since 1.0.0
  */
 
-class INDUSTRY_DIVE_Breadcrumb {
+class Industry_Dive_Breadcrumb {
     /**
-     * Array of bread INDUSTRY_DIVE_Breadcrumb
+     * Array of bread Industry_Dive_Breadcrumb
      *
      * @var array
      */
@@ -46,8 +46,8 @@ class INDUSTRY_DIVE_Breadcrumb {
         } else {
             $this->defaults['blog_url'] = esc_url( home_url() );
         }
-        $this->defaults['home'] = esc_html__('Home','INDUSTRY_DIVE');
-        $this->defaults['blog'] = esc_html__('Blog','INDUSTRY_DIVE');
+        $this->defaults['home'] = esc_html__('Home','industry_dive');
+        $this->defaults['blog'] = esc_html__('Blog','industry_dive');
 
         // Merge defaults with user passed options.
         $this->options = array_replace_recursive( $this->defaults, $options );
@@ -237,7 +237,7 @@ class INDUSTRY_DIVE_Breadcrumb {
 /**
  * Template Functions.
  */
-if ( ! function_exists( 'INDUSTRY_DIVE_breadcrumb' ) ) {
+if ( ! function_exists( 'industry_dive_Breadcrumb' ) ) {
     /**
      * Generate and display the breadcrumbs.
      *
@@ -245,13 +245,13 @@ if ( ! function_exists( 'INDUSTRY_DIVE_breadcrumb' ) ) {
      *
      * @package INDUSTRY_DIVE
      */
-    function INDUSTRY_DIVE_breadcrumb( $options = [] ) {
-        $Crumbs = new INDUSTRY_DIVE_Breadcrumb( $options );
+    function industry_dive_Breadcrumb( $options = [] ) {
+        $Crumbs = new Industry_Dive_Breadcrumb( $options );
         $Crumbs->theBreadcrumbs();
     }
 }
 
-if ( ! function_exists( 'INDUSTRY_DIVE_get_breadcrumbs' ) ) {
+if ( ! function_exists( 'industry_dive_get_breadcrumbs' ) ) {
     /**
      * Generate and return the breadcrumbs.
      *
@@ -259,8 +259,8 @@ if ( ! function_exists( 'INDUSTRY_DIVE_get_breadcrumbs' ) ) {
      *
      * @return array
      */
-    function INDUSTRY_DIVE_get_breadcrumbs( $options = [] ) {
-        $Crumbs = new INDUSTRY_DIVE_Breadcrumb( $options );
+    function industry_dive_get_breadcrumbs( $options = [] ) {
+        $Crumbs = new Industry_Dive_Breadcrumb( $options );
 
         return $Crumbs->getBreadcrumbs();
     }
@@ -269,7 +269,7 @@ if ( ! function_exists( 'INDUSTRY_DIVE_get_breadcrumbs' ) ) {
 /**
  * Utility functions
  */
-if ( ! function_exists( 'INDUSTRY_DIVE_breadcrumb_array_insert' ) ) {
+if ( ! function_exists( 'industry_dive_breadcrumb_array_insert' ) ) {
     /**
      * Insert element to a specific index of the array.
      *
@@ -279,7 +279,7 @@ if ( ! function_exists( 'INDUSTRY_DIVE_breadcrumb_array_insert' ) ) {
      *
      * @return array
      */
-    function INDUSTRY_DIVE_breadcrumb_array_insert( array $array, $element, int $position ) {
+    function industry_dive_breadcrumb_array_insert( array $array, $element, int $position ) {
         // if the array is empty just add the element to it
         if ( empty( $array ) ) {
             $array[] = $element;

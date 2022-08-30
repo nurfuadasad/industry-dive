@@ -46,46 +46,43 @@
       border: 1px solid var(--main-color-one);
       background-color: transparent;
       color: var(--main-color-one);
+      svg{
+        path{
+          fill: var(--main-color-one);
+          stroke: var(--main-color-one);
+        }
+      }
     }
 
     &.btn-rounded {
       border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
     }
 
-    &.reverse-color {
-      background-color: var(--main-color-one);
+    &.white {
+      background-color: $white;
+      color: var(--heading-color);
+      border-color: $white;
 
       &:hover {
         background-color: var(--main-color-one);
+        color: $white;
+        border-color:var(--main-color-one);
+      }
+      svg{
+        path{ fill: #000;
+          stroke: #000;
+
+        }
       }
     }
   }
 
-  .read-btn {
-    border: 1px solid vAR(--heading-color);
-    border-radius: 28px;
-    display: inline-flex;
-    background-color: transparent;
-    color: var(--heading-color);
-    padding: 14px 30px;
-    font-size: 16px;
-    font-weight: 700;
-    @include transition($transition);
-
-    i {
-      margin-left: 10px;
-    }
-
-    &:hover {
-      border-color: var(--main-color-one);
-      background-color: var(--main-color-one);
-      color: #fff;
-    }
-  }
 }
 
 
-.misha_loadmore{
+.industry_loadmore{
   background-color: #ddd;
   border-radius: 2px;
   display: block;
@@ -99,7 +96,7 @@
   padding: 10px 0;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
-.misha_loadmore:hover{
+.industry_loadmore:hover{
   background-color: #767676;
   color: #fff;
 }

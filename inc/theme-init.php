@@ -9,9 +9,9 @@ if (!defined("ABSPATH")) {
     exit(); //exit if access directly
 }
 
-if (!class_exists('INDUSTRY_DIVE_Init')) {
+if (!class_exists('Industry_Dive_Init')) {
 
-    class INDUSTRY_DIVE_Init
+    class Industry_Dive_Init
     {
        /**
         * $instance
@@ -60,7 +60,7 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
              * Make theme available for translation.
              * Translations can be filed in the /languages/ directory.
              */
-            load_theme_textdomain('INDUSTRY_DIVE', get_template_directory() . '/languages');
+            load_theme_textdomain('industry_dive', get_template_directory() . '/languages');
 
             // Add default posts and comments RSS feed links to head.
             add_theme_support('automatic-feed-links');
@@ -79,7 +79,7 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
 
             // This theme uses wp_nav_menu() in one location.
             register_nav_menus(array(
-                'main-menu' => esc_html__('Primary Menu', 'INDUSTRY_DIVE'),
+                'main-menu' => esc_html__('Primary Menu', 'industry_dive'),
             ));
 
             /*
@@ -146,9 +146,9 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
         public function theme_widgets_init()
         {
             register_sidebar(array(
-                'name' => esc_html__('Footer Widget Area', 'INDUSTRY_DIVE'),
+                'name' => esc_html__('Footer Widget Area', 'industry_dive'),
                 'id' => 'footer-widget',
-                'description' => esc_html__('Add widgets here.', 'INDUSTRY_DIVE'),
+                'description' => esc_html__('Add widgets here.', 'industry_dive'),
                 'before_widget' => '<div class="col-lg-3 col-md-6"><div id="%1$s" class="widget footer-widget %2$s">',
                 'after_widget' => '</div></div>',
                 'before_title' => '<h4 class="widget-headline">',
@@ -275,15 +275,6 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
             }
             wp_enqueue_style('INDUSTRY_DIVE-style', get_stylesheet_uri());
 
-            if (INDUSTRY_DIVE()->is_industry_dive_core_active()) {
-                if (file_exists(INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php')) {
-                    require_once INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-inline-css-style.php';
-                    require_once INDUSTRY_DIVE_DYNAMIC_STYLESHEETS . '/theme-option-css-style.php';
-                    wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['industry_dive_inline_css']));
-                    wp_add_inline_style('INDUSTRY_DIVE-style', INDUSTRY_DIVE()->minify_css_lines($GLOBALS['theme_customize_css']));
-                }
-
-            }
         }
 
         /**
@@ -347,10 +338,6 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
                     'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
-                    'file-name' => 'theme-megamenu-walker',
-                    'file-path' => INDUSTRY_DIVE_INC
-                ),
-                array(
                     'file-name' => 'theme-comments-modifications',
                     'file-path' => INDUSTRY_DIVE_INC
                 ),
@@ -359,33 +346,10 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
                     'file-path' => INDUSTRY_DIVE_INC
                 ),
                 array(
-                    'file-name' => 'theme-group-fields-cs',
-                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
-                ),
-                array(
                     'file-name' => 'theme-group-fields-value-cs',
                     'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
                 ),
-                array(
-                    'file-name' => 'theme-metabox-cs',
-                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
-                ),
-                array(
-                    'file-name' => 'theme-userprofile-cs',
-                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
-                ),
-                array(
-                    'file-name' => 'theme-shortcode-option-cs',
-                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
-                ),
-                array(
-                    'file-name' => 'theme-customizer-cs',
-                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
-                ),
-                array(
-                    'file-name' => 'theme-option-cs',
-                    'file-path' => INDUSTRY_DIVE_THEME_SETTINGS
-                ),
+
             );
 
             if (is_array($includes_files) && !empty($includes_files)) {
@@ -409,7 +373,7 @@ if (!class_exists('INDUSTRY_DIVE_Init')) {
         }
 
     }//end class
-    if (class_exists('INDUSTRY_DIVE_Init')) {
-        INDUSTRY_DIVE_Init::getInstance();
+    if (class_exists('Industry_Dive_Init')) {
+        Industry_Dive_Init::getInstance();
     }
 }

@@ -18,9 +18,12 @@ get_template_part('template-parts/content', 'featured');
 get_template_part('template-parts/content', 'trand');
 ?>
 
-    <div id="primary" class="content-area blog-page-content-area padding-top-120 padding-bottom-120">
+    <div id="primary" class="content-area blog-page-content-area padding-bottom-80">
         <main id="main" class="site-main">
             <div class="custom-container">
+                <h3 class="section-title">
+                    <?php esc_html_e('Latest Article', 'industry_dive'); ?>
+                </h3>
                 <?php
                 if (have_posts()) :
 
@@ -45,7 +48,7 @@ get_template_part('template-parts/content', 'trand');
                 <?php
                 global $wp_query;
                 if ($wp_query->max_num_pages > 1) {
-                    echo '<div class="btn-wrap desktop-center"><div class="boxed-btn  misha_loadmore">Load More</div></div>';
+                    echo '<div class="btn-wrap desktop-center"><div class="boxed-btn  industry_loadmore">Load More</div></div>';
                 }
                 ?>
             </div>

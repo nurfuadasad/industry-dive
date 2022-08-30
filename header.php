@@ -23,11 +23,11 @@
 <?php wp_body_open(); ?>
 <?php
 do_action( 'INDUSTRY_DIVE_after_body' );
-$page_container_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container( 'INDUSTRY_DIVE', 'header_options' );
+$page_container_meta = Industry_Dive_Group_Fields_Value::page_container( 'industry_dive', 'header_options' );
 ?>
 
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'INDUSTRY_DIVE' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'industry_dive' ); ?></a>
     <header id="masthead" class="site-header">
     <?php get_template_part('template-parts/header/header',$page_container_meta['navbar_type']);?>
     </header><!-- #masthead -->

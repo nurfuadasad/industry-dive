@@ -6,9 +6,9 @@
  */
 
 $INDUSTRY_DIVE = INDUSTRY_DIVE();
-$post_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_post');
+$post_meta = Industry_Dive_Group_Fields_Value::post_meta('blog_post');
 $excerpt_length = !empty($post_meta['excerpt_length']) ? $post_meta['excerpt_length'] : 55;
-$readmore_text = !empty($post_meta['readmore_btn_text']) ? $post_meta['readmore_btn_text'] : esc_html__('Read More','INDUSTRY_DIVE');
+$readmore_text = !empty($post_meta['readmore_btn_text']) ? $post_meta['readmore_btn_text'] : esc_html__('Read More','industry_dive');
 
 
 INDUSTRY_DIVE_Excerpt($excerpt_length);

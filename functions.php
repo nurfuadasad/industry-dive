@@ -54,26 +54,20 @@ if (file_exists(INDUSTRY_DIVE_INC . '/theme-cs-function.php')) {
 if (file_exists(INDUSTRY_DIVE_INC . '/theme-helper-functions.php')) {
 
     require_once INDUSTRY_DIVE_INC . '/theme-helper-functions.php';
-    if (!function_exists('INDUSTRY_DIVE')) {
+    if (!function_exists('industry_dive')) {
         function INDUSTRY_DIVE()
         {
-            return class_exists('INDUSTRY_DIVE_Helper_Functions') ? new INDUSTRY_DIVE_Helper_Functions() : false;
+            return class_exists('Industry_Dive_Helper_Functions') ? new Industry_Dive_Helper_Functions() : false;
         }
     }
 }
+
 /**
- * Nav menu fallback function
+ * WP Ajax load
+ * @package INDUSTRY_DIVE
  * @since 1.0.0
  */
-if (is_user_logged_in()) {
-    function sword_theme_fallback_menu()
-    {
-        get_template_part('template-parts/default', 'menu');
-    }
-}
-
-
-function misha_my_load_more_scripts()
+function industry_my_load_more_scripts()
 {
 
     global $wp_query;
@@ -87,7 +81,7 @@ function misha_my_load_more_scripts()
     // now the most interesting part
     // we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
     // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
-    wp_localize_script('my_loadmore', 'misha_loadmore_params', array(
+    wp_localize_script('my_loadmore', 'industry_loadmore_params', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
         'posts' => json_encode($wp_query->query_vars), // everything about your loop is here
         'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
@@ -97,11 +91,15 @@ function misha_my_load_more_scripts()
     wp_enqueue_script('my_loadmore');
 }
 
-add_action('wp_enqueue_scripts', 'misha_my_load_more_scripts');
+add_action('wp_enqueue_scripts', 'industry_my_load_more_scripts');
 
+/**
+ * WP Ajax load handler function
+ * @package INDUSTRY_DIVE
+ * @since 1.0.0
+ */
 
-
-function misha_loadmore_ajax_handler(){
+function industry_loadmore_ajax_handler(){
 
     // prepare our arguments for the query
     $args = json_decode( stripslashes( $_POST['query'] ), true );
@@ -131,5 +129,5 @@ function misha_loadmore_ajax_handler(){
 
 
 
-add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler');
+add_action('wp_ajax_loadmore', 'industry_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'industry_loadmore_ajax_handler');

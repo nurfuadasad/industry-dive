@@ -14,8 +14,8 @@
 
 get_header();
 
-$page_layout_meta = INDUSTRY_DIVE_Group_Fields_Value::page_layout('INDUSTRY_DIVE');
-$page_container_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'container_options');
+$page_layout_meta = Industry_Dive_Group_Fields_Value::page_layout('industry_dive');
+$page_container_meta = Industry_Dive_Group_Fields_Value::page_container('industry_dive', 'container_options');
 $full_width_class = $page_layout_meta['content_column_class'] === 'col-lg-12' ? ' full-width-content ' : '';
 ?>
 <?php

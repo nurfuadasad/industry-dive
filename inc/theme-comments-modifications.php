@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( 'INDUSTRY_DIVE_comment_modification' ) ) {
-	function INDUSTRY_DIVE_comment_modification($comment, $args, $depth) {
+if ( ! function_exists( 'industry_dive_comment_modification' ) ) {
+	function industry_dive_comment_modification($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
 		extract($args, EXTR_SKIP);
 		if ( 'div' == $args['style'] ) {
@@ -39,12 +39,12 @@ if ( ! function_exists( 'INDUSTRY_DIVE_comment_modification' ) ) {
 				<h4 class="title"><?php printf( '%s', get_comment_author() ); ?></h4>
                 <span class="date"> <?php printf('<span class="date">%s</span>',get_comment_date());?></span>
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'INDUSTRY_DIVE' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'industry_dive' ); ?></em>
 				<?php endif; ?>
 				<?php comment_text(); ?>
 				<?php
 				comment_reply_link( array_merge( $args, array(
-					'reply_text' => esc_html__('Reply','INDUSTRY_DIVE') ,
+					'reply_text' => esc_html__('Reply','industry_dive') ,
 					'before' => '',
 					'class'  => '',
 					'depth' => $depth,

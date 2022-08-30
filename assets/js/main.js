@@ -40,6 +40,17 @@
             navbarFix()
         }
 
+        /*--------------------------
+         sticky menu activation
+        ---------------------------*/
+        $(window).bind('scroll', function () {
+            var navHeight = $('.nav-bar-style-01').height();
+            if ($(window).scrollTop() > navHeight) {
+                $('.navbar-area').addClass('nav-fixed');
+            } else {
+                $('.navbar-area').removeClass('nav-fixed');
+            }
+        });
     });
 
     $(window).on('resize', function () {
@@ -59,31 +70,11 @@
             back to top show / hide
         ---------------------------*/
         var ScrollTop = $('.back-to-top');
-        if ($(window).scrollTop() > 1000) {
-            ScrollTop.fadeIn(1000);
+        if ($(window).scrollTop() > 500) {
+            ScrollTop.fadeIn(500);
         } else {
-            ScrollTop.fadeOut(1000);
+            ScrollTop.fadeOut(500);
         }
-        /*--------------------------
-         sticky menu activation
-        ---------------------------*/
-        var st = $(this).scrollTop();
-        var mainMenuTop = $('.navbar-area');
-        if ($(window).scrollTop() > 1000) {
-            if (st > lastScrollTop) {
-                // hide sticky menu on scrolldown
-                mainMenuTop.removeClass('nav-fixed');
-
-            } else {
-                // active sticky menu on scrollup
-                mainMenuTop.addClass('nav-fixed');
-            }
-
-        } else {
-            mainMenuTop.removeClass('nav-fixed ');
-        }
-        lastScrollTop = st;
-
     });
 
     $(window).on('load', function () {

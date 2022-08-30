@@ -9,7 +9,7 @@ $INDUSTRY_DIVE = INDUSTRY_DIVE();
 $post_meta = get_post_meta(get_the_ID(),'INDUSTRY_DIVE_post_gallery_options',true);
 $post_meta_gallery = isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images']) ? $post_meta['gallery_images'] : '';
 $gallery_image = explode(',',$post_meta_gallery);
-$blog_single_options = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_post');
+$blog_single_options = Industry_Dive_Group_Fields_Value::post_meta('blog_single_post');
 ?>
 <?php
 if ( isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images']) ):

@@ -14,7 +14,7 @@
                     <form action="<?php echo esc_url(home_url('/')) ?>" class="search-form">
                         <div class="form-group">
                             <input type="text" name="s" class="form-control"
-                                   placeholder="<?php echo esc_attr__('Search', 'INDUSTRY_DIVE'); ?>">
+                                   placeholder="<?php echo esc_attr__('Search', 'industry_dive'); ?>">
                         </div>
                         <button class="submit-btn" type="submit"><span class="dashicons dashicons-search"></span>
                         </button>

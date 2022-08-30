@@ -9,14 +9,13 @@
 
 get_header();
 $INDUSTRY_DIVE = INDUSTRY_DIVE();
-$page_layout_meta = INDUSTRY_DIVE_Group_Fields_Value::page_layout_options('blog_single');
+$page_layout_meta = Industry_Dive_Group_Fields_Value::page_layout_options('blog_single');
 $full_width_class = $page_layout_meta['content_column_class'] === 'col-lg-12' ? ' full-width-content ' : '';
-if ($INDUSTRY_DIVE->is_industry_dive_core_active()) {
-    INDUSTRY_DIVE_core()->setPostViews(get_the_ID());
-}
+
 ?>
     <div id="primary" class="content-area blog-content-page padding-120 <?php echo esc_attr($full_width_class); ?>">
         <main id="main" class="site-main">
+            <div class="custom-container">
             <div class="<?php echo esc_attr($page_layout_meta['content_column_class']); ?>">
                 <?php
                 while (have_posts()) :
@@ -28,6 +27,7 @@ if ($INDUSTRY_DIVE->is_industry_dive_core_active()) {
                     endif;
                 endwhile; // End of the loop.
                 ?>
+            </div>
             </div>
         </main><!-- #main -->
     </div><!-- #primary -->

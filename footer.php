@@ -9,7 +9,7 @@
  * @package INDUSTRY_DIVE
  */
 
-$page_container_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'header_options');
+$page_container_meta = Industry_Dive_Group_Fields_Value::page_container('industry_dive', 'header_options');
 ?>
 
 </div><!-- #content -->

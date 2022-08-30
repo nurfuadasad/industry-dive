@@ -9,8 +9,8 @@ if (!defined('ABSPATH')){
     exit(); //exit if access it directly
 }
 
-if (!class_exists('INDUSTRY_DIVE_Excerpt')):
-class INDUSTRY_DIVE_Excerpt {
+if (!class_exists('Industry_Dive_Excerpt')):
+class Industry_Dive_Excerpt {
 
     public static $length = 55;
     public static $types = array(
@@ -32,21 +32,21 @@ class INDUSTRY_DIVE_Excerpt {
     * @author Baylor Rae'
     */
     public static function length($new_length = 55, $more = true) {
-        INDUSTRY_DIVE_Excerpt::$length = $new_length;
-        INDUSTRY_DIVE_Excerpt::$more = $more;
+        Industry_Dive_Excerpt::$length = $new_length;
+        Industry_Dive_Excerpt::$more = $more;
 
-        add_filter( 'excerpt_more', 'INDUSTRY_DIVE_Excerpt::auto_excerpt_more' );
+        add_filter( 'excerpt_more', 'Industry_Dive_Excerpt::auto_excerpt_more' );
 
-        add_filter('excerpt_length', 'INDUSTRY_DIVE_Excerpt::new_length');
+        add_filter('excerpt_length', 'Industry_Dive_Excerpt::new_length');
 
-        INDUSTRY_DIVE_Excerpt::output();
+        Industry_Dive_Excerpt::output();
     }
 
     public static function new_length() {
-        if( isset(INDUSTRY_DIVE_Excerpt::$types[INDUSTRY_DIVE_Excerpt::$length]) )
-            return INDUSTRY_DIVE_Excerpt::$types[INDUSTRY_DIVE_Excerpt::$length];
+        if( isset(Industry_Dive_Excerpt::$types[Industry_Dive_Excerpt::$length]) )
+            return Industry_Dive_Excerpt::$types[Industry_Dive_Excerpt::$length];
         else
-            return INDUSTRY_DIVE_Excerpt::$length;
+            return Industry_Dive_Excerpt::$length;
     }
 
     public static function output() {
@@ -55,11 +55,11 @@ class INDUSTRY_DIVE_Excerpt {
 
     public static function continue_reading_link() {
 
-        return '<span class="readmore"><a href="'.esc_url(get_permalink()).'">'.esc_html__('Read More','INDUSTRY_DIVE').'</a></span>';
+        return '<span class="readmore"><a href="'.esc_url(get_permalink()).'">'.esc_html__('Read More','industry_dive').'</a></span>';
     }
 
     public static function auto_excerpt_more( ) {
-        if (INDUSTRY_DIVE_Excerpt::$more) :
+        if (Industry_Dive_Excerpt::$more) :
             return ' ';
         else :
             return ' ';
@@ -69,10 +69,10 @@ class INDUSTRY_DIVE_Excerpt {
 } //end class
 endif;
 
-if (!function_exists('INDUSTRY_DIVE_Excerpt')){
+if (!function_exists('Industry_Dive_Excerpt')){
 
-	function INDUSTRY_DIVE_Excerpt($length = 55, $more=true) {
-		INDUSTRY_DIVE_Excerpt::length($length, $more);
+	function Industry_Dive_Excerpt($length = 55, $more=true) {
+		Industry_Dive_Excerpt::length($length, $more);
 	}
 
 }

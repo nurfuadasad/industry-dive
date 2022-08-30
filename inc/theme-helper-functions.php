@@ -9,9 +9,9 @@ if (!defined("ABSPATH")) {
     exit(); //exit if access directly
 }
 
-if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
+if (!class_exists('Industry_Dive_Helper_Functions')) {
 
-    class INDUSTRY_DIVE_Helper_Functions
+    class Industry_Dive_Helper_Functions
     {
         /**
          * $instance
@@ -180,7 +180,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
         {
 
             $defaults = array(
-                'before' => '<div class="wp-link-pages"><span>' . esc_html__('Pages:', 'INDUSTRY_DIVE') . '</span>',
+                'before' => '<div class="wp-link-pages"><span>' . esc_html__('Pages:', 'industry_dive') . '</span>',
                 'after' => '</div>',
                 'link_before' => '',
                 'link_after' => '',
@@ -218,7 +218,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     }
                     echo '<div class="blog-pagination margin-top-30"><ul>';
-                    echo '<li><span>' . esc_html($paged) . esc_html__(' of ', 'INDUSTRY_DIVE') . esc_html($wp_query->max_num_pages) . '</span></li>';
+                    echo '<li><span>' . esc_html($paged) . esc_html__(' of ', 'industry_dive') . esc_html($wp_query->max_num_pages) . '</span></li>';
                     foreach ($page_format as $page) {
                         echo "<li>" . wp_kses($page, $allowed_html) . "</li>";
                     }
@@ -243,7 +243,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     }
                     echo '<div class="blog-pagination desktop-center margin-top-30"><ul>';
-                    echo '<li><span>' . esc_html($paged) . esc_html__(' of ', 'INDUSTRY_DIVE') . esc_html($nav_query->max_num_pages) . '</span></li>';
+                    echo '<li><span>' . esc_html($paged) . esc_html__(' of ', 'industry_dive') . esc_html($nav_query->max_num_pages) . '</span></li>';
                     foreach ($page_format as $page) {
                         echo "<li>" . wp_kses($page, $allowed_html) . "</li>";
                     }
@@ -259,8 +259,8 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
         {
             $byline = sprintf(
             /* translators: %s: post author. */
-                esc_html_x(' %s', 'post author', 'INDUSTRY_DIVE'),
-                '<a class="post-by url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"> ' . esc_html__('By ', 'INDUSTRY_DIVE') . esc_html(get_the_author()) . '</a>');
+                esc_html_x(' %s', 'post author', 'industry_dive'),
+                '<a class="post-by url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"> ' . esc_html__('By ', 'industry_dive') . esc_html(get_the_author()) . '</a>');
 
             echo '<span class="user"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
@@ -280,7 +280,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
 
             $posted_on = sprintf(
             /* translators: %s: post date. */
-                esc_html_x(' %s', 'post date', 'INDUSTRY_DIVE'),
+                esc_html_x(' %s', 'post date', 'industry_dive'),
                 '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
             );
 
@@ -330,82 +330,6 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
             return $minutes;
         }
 
-
-        /**
-         * Check if given term has child terms
-         *
-         * @param Integer $term_id
-         * @param String $taxonomy
-         *
-         * @return Boolean
-         */
-        public function chromenews_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Popular Tags", $number = 5, $filterby = "popular")
-        {
-
-
-            $tags_filerby = (($filterby == 'latest')) ? 'date' : 'count';
-            $popular_taxonomies = get_terms(array(
-                'taxonomy' => $taxonomy,
-                'number' => absint($number),
-                'orderby' => $tags_filerby,
-                'order' => 'DESC',
-                'hide_empty' => true,
-            ));
-
-            $html = '';
-
-            if (isset($popular_taxonomies) && !empty($popular_taxonomies)) :
-                $html .= '<div class="aft-popular-taxonomies-lists clearfix">';
-                if (!empty($title)) :
-                    $html .= '<strong>';
-                    $html .= esc_html($title);
-                    $html .= '</strong>';
-                endif;
-                $html .= '<ul>';
-                foreach ($popular_taxonomies as $tax_term) :
-                    $html .= '<li>';
-                    $html .= '<a href="' . esc_url(get_term_link($tax_term)) . '">';
-                    $html .= $tax_term->name;
-                    $html .= '</a>';
-                    $html .= '</li>';
-                endforeach;
-                $html .= '</ul>';
-                $html .= '</div>';
-            endif;
-
-            echo wp_kses_post($html);
-        }
-
-
-        /**
-         * Author avatar
-         * @since 1.0.0
-         */
-        public function author_avatar($post_id)
-        {
-            $post_author_id = get_post_field('post_author', $post_id);
-            $user = get_userdata($post_author_id);
-            $author_name = $user->display_name;
-            $author_image = esc_url(get_avatar_url($user->ID));
-            $author_link = esc_url(get_author_posts_url(get_the_author_meta('ID')));
-            printf('<div class="post-author"><div class="author-image"><img src="%1$s" class="image-fit rounded-circle" alt="%3$s"></div><a href="%2$s"> ' . esc_html__("By", "INDUSTRY_DIVE") . ' %3$s </a></div>', $author_image, $author_link, $author_name);
-        }
-
-        /**
-         * Author bio
-         * @since 1.0.0
-         */
-        public function author_biography($post_id)
-        {
-            $post_author_id = get_post_field('post_author', $post_id);
-            $user = get_userdata($post_author_id);
-            $author_desc = get_the_author_meta('description', $post_author_id);
-            $author_name = $user->display_name;
-            $author_image = esc_url(get_avatar_url($user->ID, ['size' => '180']));
-
-            printf('<div class="post-author"><div class="author-image"><img src="%1$s" class="image-fit" alt="%3$s"></div><div class="author-content"><cite class="post-by">' . esc_html__('Written By', 'INDUSTRY_DIVE') . '</cite><h3 class="title">%2$s</h3><p>%4$s</p></div></div>', $author_image, $author_name, $author_name, $author_desc);
-        }
-
         /**
          * Posted Tags
          * @since 1.0.0
@@ -413,7 +337,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
         public function posted_tag()
         {
             /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list('', esc_html_x(' ', 'list item separator', 'INDUSTRY_DIVE'));
+            $tags_list = get_the_tag_list('', esc_html_x(' ', 'list item separator', 'industry_dive'));
             if ($tags_list) {
                 /* translators: 1: list of tags. */
                 printf('<ul class="tags"><li>' . ' %1$s' . '</li></ul>', $tags_list); // WPCS: XSS OK.
@@ -436,7 +360,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
                     <div class="prev-post">
                         <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>">
                             <div class="title-with-link">
-                                <span><?php esc_html_e('Prev Post', 'INDUSTRY_DIVE') ?></span>
+                                <span><?php esc_html_e('Prev Post', 'industry_dive') ?></span>
                                 <h3><?php echo esc_html(wp_trim_words($prev_post->post_title, 4, '.')); ?></h3>
                             </div>
                         </a>
@@ -451,7 +375,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
                     <div class="next-post">
                         <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
                             <div class="title-with-link">
-                                <span><?php esc_html_e('Next Post', 'INDUSTRY_DIVE') ?></span>
+                                <span><?php esc_html_e('Next Post', 'industry_dive') ?></span>
                                 <h3><?php echo esc_html(wp_trim_words($next_post->post_title, 4, '.')); ?></h3>
                             </div>
                         </a>
@@ -470,12 +394,12 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
             $output = '<div class="post-navigation-area"><div class="post-navigation-inner">';
             if (!empty(get_previous_post_link())) {
                 $output .= sprintf('<div class="content-area %1s">', empty(get_next_post_link()) ? 'no-line' : '');
-                $output .= '<div class="content"><span class="prev-post">' . esc_html__('Previous', 'INDUSTRY_DIVE') . '</span>';
+                $output .= '<div class="content"><span class="prev-post">' . esc_html__('Previous', 'industry_dive') . '</span>';
                 $output .= get_previous_post_link('<h4 class="title">%link<span>.</span></h4>') . '</div></div>';
             }
             if (!empty(get_next_post_link())) {
                 $output .= sprintf('<div class="content-area style-01 %1s">', empty(get_previous_post_link()) ? 'no-line' : '');
-                $output .= '<div class="content"><span class="next-post">' . esc_html__('Next', 'INDUSTRY_DIVE') . '</span>';
+                $output .= '<div class="content"><span class="next-post">' . esc_html__('Next', 'industry_dive') . '</span>';
                 $output .= get_next_post_link('<h4 class="title">%link<span>.</span></h4>') . ' </div></div>';
             }
             $output .= '</div></div>';
@@ -582,7 +506,7 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
                                                     </a>
                                                     <?php INDUSTRY_DIVE_Excerpt('18') ?>
                                                     <a class="read-btn"
-                                                       href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More', 'INDUSTRY_DIVE') ?>
+                                                       href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More', 'industry_dive') ?>
                                                         <i class="flaticon-right-arrow-2"></i>
                                                     </a>
                                                 </div>
@@ -793,21 +717,13 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
          */
         public function is_industry_dive_active()
         {
-            $theme_name_array = array('INDUSTRY_DIVE', 'INDUSTRY_DIVE Child');
+            $theme_name_array = array('industry_dive', 'INDUSTRY_DIVE Child');
             $current_theme = wp_get_theme();
             $current_theme_name = $current_theme->get('Name');
 
             return in_array($current_theme_name, $theme_name_array);
         }
 
-        /**
-         * is INDUSTRY_DIVE core active
-         * @since 1.0.0
-         * */
-        public function is_industry_dive_core_active()
-        {
-            return defined('INDUSTRY_DIVE_CORE_SELF_PATH');
-        }
 
         /**
          * Comment Count
@@ -817,13 +733,13 @@ if (!class_exists('INDUSTRY_DIVE_Helper_Functions')) {
         public function comment_count()
         {
             $comments_count = get_comments_number(get_the_ID());
-            $comment_text = ($comments_count > 1) ? esc_html__('Comments', 'INDUSTRY_DIVE') . ' (' . $comments_count . ')' : esc_html__('Comments', 'INDUSTRY_DIVE') . ' (' . $comments_count . ')';
+            $comment_text = ($comments_count > 1) ? esc_html__('Comments', 'industry_dive') . ' (' . $comments_count . ')' : esc_html__('Comments', 'industry_dive') . ' (' . $comments_count . ')';
 
             printf($comment_text);
         }
 
     } //end class
-    if (class_exists('INDUSTRY_DIVE_Helper_Functions')) {
-        INDUSTRY_DIVE_Helper_Functions::getInstance();
+    if (class_exists('Industry_Dive_Helper_Functions')) {
+        Industry_Dive_Helper_Functions::getInstance();
     }
 }

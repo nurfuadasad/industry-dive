@@ -6,7 +6,7 @@
  */
 
 $INDUSTRY_DIVE = INDUSTRY_DIVE();
-$post_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_post');
+$post_meta = Industry_Dive_Group_Fields_Value::post_meta('blog_post');
 ?>
 <div class="post-meta-wrap">
     <ul class="post-meta">

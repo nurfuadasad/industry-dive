@@ -10,7 +10,7 @@
 $INDUSTRY_DIVE = INDUSTRY_DIVE();
 $post_meta = get_post_meta(get_the_ID(), 'INDUSTRY_DIVE_post_gallery_options', true);
 $post_meta_gallery = isset($post_meta['gallery_images']) && !empty($post_meta['gallery_images']) ? $post_meta['gallery_images'] : '';
-$post_single_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_post');
+$post_single_meta = Industry_Dive_Group_Fields_Value::post_meta('blog_single_post');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-single-content-wrap'); ?>>
@@ -53,13 +53,13 @@ $post_single_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_pos
         <div class="blog-details-footer">
             <?php if (has_tag() && $post_single_meta['posted_tag']): ?>
                 <div class="left">
-                    <h3 class="title"><?php echo esc_html__('Tags:', 'INDUSTRY_DIVE') ?></h3>
+                    <h3 class="title"><?php echo esc_html__('Tags:', 'industry_dive') ?></h3>
                     <?php $INDUSTRY_DIVE->posted_tag(); ?>
                 </div>
             <?php endif; ?>
             <?php if (shortcode_exists('INDUSTRY_DIVE_post_share') && $post_single_meta['posted_share']) : ?>
                 <div class="right">
-                    <h3 class="title"><?php echo esc_html__('Social Share:', 'INDUSTRY_DIVE') ?></h3>
+                    <h3 class="title"><?php echo esc_html__('Social Share:', 'industry_dive') ?></h3>
                     <?php
                     if (shortcode_exists('INDUSTRY_DIVE_post_share') && $post_single_meta['posted_share']) {
                         echo do_shortcode('[INDUSTRY_DIVE_post_share]');
@@ -69,9 +69,8 @@ $post_single_meta = INDUSTRY_DIVE_Group_Fields_Value::post_meta('blog_single_pos
             <?php endif; ?>
         </div>
     <?php endif;
-    if ($post_single_meta['next_post_nav_btn'] && $INDUSTRY_DIVE->is_industry_dive_core_active()) {
-        echo wp_kses($INDUSTRY_DIVE->post_navigation(), $INDUSTRY_DIVE->kses_allowed_html('all'));
-    }
+
+    echo wp_kses($INDUSTRY_DIVE->post_navigation(), $INDUSTRY_DIVE->kses_allowed_html('all'));
 
     $INDUSTRY_DIVE->get_related_post([
         'post_type' => 'post',

@@ -9,9 +9,9 @@ if (!defined("ABSPATH")) {
     exit(); //exit if access directly
 }
 
-if (!class_exists('INDUSTRY_DIVE_Customize')) {
+if (!class_exists('Industry_Dive_Customize')) {
 
-    class INDUSTRY_DIVE_Customize
+    class Industry_Dive_Customize
     {
         /**
          * $instance
@@ -66,7 +66,7 @@ if (!class_exists('INDUSTRY_DIVE_Customize')) {
             $page_id = INDUSTRY_DIVE()->page_id();
             $check_page = (!is_home() && !is_front_page() && is_singular()) || is_search() || is_author() || is_404() || is_archive() ? true : false;
             $check_home_page = INDUSTRY_DIVE()->is_home_page();
-            $page_header_meta = INDUSTRY_DIVE_Group_Fields_Value::page_container('INDUSTRY_DIVE', 'header_options');
+            $page_header_meta = Industry_Dive_Group_Fields_Value::page_container('industry_dive', 'header_options');
             $header_variant_class = isset($page_header_meta['navbar_type']) ? 'navbar-' . $page_header_meta['navbar_type'] : 'navbar-default';
             $page_breadcrumb_enable = isset($page_header_meta['page_breadcrumb_enable']) && $page_header_meta['page_breadcrumb_enable'] ? $page_header_meta['page_breadcrumb_enable'] : false;
             $breadcrumb_enable = false;
@@ -106,9 +106,9 @@ if (!class_exists('INDUSTRY_DIVE_Customize')) {
                                         the_archive_title('<h2 class="page-title">', '</h2>');
                                     }
                                 } elseif (is_404()) {
-                                    printf('<h2 class="page-title">%1$s</h2>', esc_html__('Error 404', 'INDUSTRY_DIVE'));
+                                    printf('<h2 class="page-title">%1$s</h2>', esc_html__('Error 404', 'industry_dive'));
                                 } elseif (is_search()) {
-                                    printf('<h2 class="page-title">%1$s %2$s</h2>', esc_html__('Search Results for:', 'INDUSTRY_DIVE'), get_search_query());
+                                    printf('<h2 class="page-title">%1$s %2$s</h2>', esc_html__('Search Results for:', 'industry_dive'), get_search_query());
                                 } elseif (is_singular('post')) {
                                     printf('<h2 class="page-title">%1$s </h2>', get_the_title());
                                 } elseif (is_singular('page')) {
@@ -152,7 +152,7 @@ if (!class_exists('INDUSTRY_DIVE_Customize')) {
         {
             $back_top_enable = cs_get_switcher_option('back_top_enable');
             $back_top_icon_class = cs_get_option('back_top_icon');
-            $back_top_icon = $back_top_icon_class ?? 'fas fa-angle-up';
+            $back_top_icon = $back_top_icon_class ?? 'dashicons dashicons-arrow-up-alt';
 
             if (!$back_top_enable) {
                 return;
@@ -185,7 +185,7 @@ if (!class_exists('INDUSTRY_DIVE_Customize')) {
 
 
     }//end class
-    if (class_exists('INDUSTRY_DIVE_Customize')) {
-        INDUSTRY_DIVE_Customize::getInstance();
+    if (class_exists('Industry_Dive_Customize')) {
+        Industry_Dive_Customize::getInstance();
     }
 }

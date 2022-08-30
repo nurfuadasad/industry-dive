@@ -1,0 +1,37 @@
+//Footer Style
+.footer-style{
+  background-color: #333E47;
+  padding: 50px 0;
+}
+
+.footer-content-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .footer-right{
+    text-align: right;
+    p{
+      color: $white;
+      font-weight: 400;
+      font-size: 22px;
+      margin-top: 0;
+    }
+  }
+}
+.footer-left{
+  p{
+    padding-top: 30px;
+    color: #fff;
+  }
+}
+.footer-menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li{
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
